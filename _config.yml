@@ -265,6 +265,8 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+sidebar:
+  nav: "docs"    
 
 
 # Defaults
@@ -280,5 +282,4 @@ defaults:
       comments: # true
       share: true
       related: true
-      sidebar:
-        nav: "docs"
+
