@@ -1,0 +1,188 @@
+### while 반복문
+- while 뒤의 조건이 True일 경우, while 코드 블록을 계속 수행
+- 조건이 False가 되면 블록 수행을 멈추고 이후 코드를 실행
+
+### break
+- loop를 중단할 때 사용
+- 보통 조건문 안에서 수행되며, 조건을 만족하는 경우 loop를 탈출하기 위해 사용
+- loop를 중단하는 경우, while 이후의 코드를 수행
+
+### continue
+- break처럼 반복을 중단하지 않고, 다시 while 조건으로 점프
+- 특정한 경우에는 코드를 수행하지 않고 다음으로 건너 뛰기 위해 사용
+
+
+```python
+# while <조건문>:
+#     <수행할 문장1>
+#     <수행할 문장2>
+#     <수행할 문장3>
+```
+
+
+```python
+number = 0
+while number <= 5:
+    number += 1
+    print(number)   
+```
+
+    1
+    2
+    3
+    4
+    5
+    6
+    
+
+
+```python
+num = 1
+
+while True:
+    print(num)
+    num += 1
+    if num > 13:
+        break
+```
+
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+    11
+    12
+    13
+    
+
+
+```python
+coffee = 10
+
+while True:
+    money = int(input("동전을 넣어주세요: "))
+    if money == 300:
+        print("커피를 받으세요.")
+        coffee = coffee -1
+    elif money > 300:
+        print("거스름돈 {}을 받으세요. 커피를 받으세요.".format(money - 300))
+        coffee = coffee -1
+    else:
+        print("반환되는 동전을 받으세요.")
+    
+    if coffee == 0:
+        print("소진 되었습니다. 판매를 중지합니다.")
+        break
+```
+
+    동전을 넣어주세요: 500
+    거스름돈 200을 받으세요. 커피를 받으세요.
+    
+
+
+```python
+num1 = 1
+num2 = 1
+
+while True:
+    num1 += num1
+    num2 += num2
+    num1 = int(input("첫 번째 정수 입력>> "))
+    num2 = int(input("두 번째 정수 입력>> "))
+    
+    if num1 == num2 == 0:
+        print("프로그램이 종료되었습니다.")
+        break
+         
+    num3 = num1 + num2
+    print("두 정수의 합 : {}".format(num3))
+```
+
+
+```python
+# while 문을 이용하여 1 부터 100 까지의 수를 더한 값을 구하시오.
+
+num = 0
+sum = 0
+
+while num < 100:
+    num += 1
+    sum += num # sum = sum + num
+
+print(sum)
+```
+
+    5050
+    
+
+
+```python
+import random
+
+n = random.randint(1, 50)
+```
+
+
+```python
+while True:
+    s = int(input("숫자를 입력하세요 >> "))
+    
+    if s > n:
+        print("{}보다 작은 수 입니다.".format(s))
+    elif s < n:  
+        print("{}보다 큰 수 입니다.".format(s))
+    else:
+        print("정답을 맞추셨습니다.")
+        break   
+```
+
+    숫자를 입력하세요 >> 10
+    10보다 큰 수 입니다.
+    숫자를 입력하세요 >> 11
+    11보다 큰 수 입니다.
+    숫자를 입력하세요 >> 12
+    12보다 큰 수 입니다.
+    숫자를 입력하세요 >> 13
+    13보다 큰 수 입니다.
+    숫자를 입력하세요 >> 14
+    14보다 큰 수 입니다.
+    숫자를 입력하세요 >> 15
+    15보다 큰 수 입니다.
+    숫자를 입력하세요 >> 16
+    정답을 맞추셨습니다.
+    
+
+
+```python
+num = 0
+
+while True:
+    num += 1
+    print("파이썬")    
+ 
+    if num == 10:
+        break
+```
+
+    파이썬
+    파이썬
+    파이썬
+    파이썬
+    파이썬
+    파이썬
+    파이썬
+    파이썬
+    파이썬
+    파이썬
+    
+
+
+```python
+
+```
