@@ -1,6 +1,6 @@
 ---
 title: "Kaggle"
-layout: category-kaggle
+layout: category-Kaggle
 permalink: /Kaggle/
 author_profile: True
 ---
