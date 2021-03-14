@@ -1,0 +1,544 @@
+### Pandas library (PANel DAta)
+
+- Series class: 인덱스 + 값, 1차원
+- Dataframe class: 표, 2차원
+
+
+```python
+import pandas as pd
+```
+
+### Series
+
+pd.Series
+
+
+```python
+population = pd.Series([9904312, 3448737, 2890451, 2466052])
+
+population
+```
+
+
+
+
+    0    9904312
+    1    3448737
+    2    2890451
+    3    2466052
+    dtype: int64
+
+
+
+
+```python
+population = pd.Series([9904312, 3448737, 2890451, 2466052],
+                       index = ['서울', '부산', '인천', '대구'])
+
+population
+```
+
+
+
+
+    서울    9904312
+    부산    3448737
+    인천    2890451
+    대구    2466052
+    dtype: int64
+
+
+
+
+```python
+# Check Series values
+
+population.values
+```
+
+
+
+
+    array([9904312, 3448737, 2890451, 2466052], dtype=int64)
+
+
+
+
+```python
+# Check Series index
+population.index
+```
+
+
+
+
+    Index(['서울', '부산', '인천', '대구'], dtype='object')
+
+
+
+
+```python
+# Series values data type
+population.dtype
+```
+
+
+
+
+    dtype('int64')
+
+
+
+
+```python
+# Series naming
+
+population.name = "인구"
+population.index.name = "도시"
+
+population
+```
+
+
+
+
+    도시
+    서울    9904312
+    부산    3448737
+    인천    2890451
+    대구    2466052
+    Name: 인구, dtype: int64
+
+
+
+
+```python
+population.describe()
+```
+
+
+
+
+    count    4.000000e+00
+    mean     4.677388e+06
+    std      3.507776e+06
+    min      2.466052e+06
+    25%      2.784351e+06
+    50%      3.169594e+06
+    75%      5.062631e+06
+    max      9.904312e+06
+    Name: 인구, dtype: float64
+
+
+
+
+```python
+# Series coculation
+
+population/1000000
+```
+
+
+
+
+    도시
+    서울    9.904312
+    부산    3.448737
+    인천    2.890451
+    대구    2.466052
+    Name: 인구, dtype: float64
+
+
+
+
+```python
+# Series indexing - > Series[number] or Series[value]
+
+population[1], population["부산"]
+```
+
+
+
+
+    (3448737, 3448737)
+
+
+
+
+```python
+population[[0, 3, 1]]
+```
+
+
+
+
+    도시
+    서울    9904312
+    대구    2466052
+    부산    3448737
+    Name: 인구, dtype: int64
+
+
+
+
+```python
+# Series slicing - > Series[number:number] or Series[value:value]
+population[0:2]
+```
+
+
+
+
+    도시
+    서울    9904312
+    부산    3448737
+    Name: 인구, dtype: int64
+
+
+
+
+```python
+population["서울":"부산"]
+```
+
+
+
+
+    도시
+    서울    9904312
+    부산    3448737
+    Name: 인구, dtype: int64
+
+
+
+
+```python
+# Series boolean indexing - ture or false 값이 출력되는 것들
+
+population >= 2500000
+```
+
+
+
+
+    도시
+    서울     True
+    부산     True
+    인천     True
+    대구    False
+    Name: 인구, dtype: bool
+
+
+
+
+```python
+# population >= 2500000 이 true 인 index, value 출력
+
+population[population >= 2500000]
+```
+
+
+
+
+    도시
+    서울    9904312
+    부산    3448737
+    인천    2890451
+    Name: 인구, dtype: int64
+
+
+
+
+```python
+# population >= 2500000 이 true 인 value 출력
+
+population.index[population >= 2500000]
+```
+
+
+
+
+    Index(['서울', '부산', '인천'], dtype='object', name='도시')
+
+
+
+
+```python
+population.index == '서울'
+```
+
+
+
+
+    array([ True, False, False, False])
+
+
+
+
+```python
+# 문제
+
+# 인구가 2,500,000 이상 이면서 5,000,000 이하인 value 를 찾으세요.
+
+population.index[population >= 2500000]
+```
+
+
+
+
+    Index(['서울', '부산', '인천'], dtype='object', name='도시')
+
+
+
+
+```python
+population.index[population <= 5000000]
+```
+
+
+
+
+    Index(['부산', '인천', '대구'], dtype='object', name='도시')
+
+
+
+
+```python
+# & == and
+
+population.index[(population >= 2500000) & (population <= 5000000)]
+```
+
+
+
+
+    Index(['부산', '인천'], dtype='object', name='도시')
+
+
+
+
+```python
+# | == or
+
+population.index[(population >= 2500000) | (population <= 5000000)]
+```
+
+
+
+
+    Index(['서울', '부산', '인천', '대구'], dtype='object', name='도시')
+
+
+
+
+```python
+population[(population >= 2500000) & (population <= 5000000)]
+```
+
+
+
+
+    도시
+    부산    3448737
+    인천    2890451
+    Name: 인구, dtype: int64
+
+
+
+
+```python
+# 딕셔너리 객체로 Series 생성
+data = {"서울" : 9631482, "부산" : 3393191, "인천" : 2632035, "대전" : 1490158}
+data
+```
+
+
+
+
+    {'서울': 9631482, '부산': 3393191, '인천': 2632035, '대전': 1490158}
+
+
+
+
+```python
+population2 = pd.Series(data)
+```
+
+
+```python
+population2.name = "인구" 
+population2.index.name = "도시"
+
+population2 # 2010 년 인구수
+```
+
+
+
+
+    도시
+    서울    9631482
+    부산    3393191
+    인천    2632035
+    대전    1490158
+    Name: 인구, dtype: int64
+
+
+
+
+```python
+population # 2015 년 인구수
+```
+
+
+
+
+    도시
+    서울    9904312
+    부산    3448737
+    인천    2890451
+    대구    2466052
+    Name: 인구, dtype: int64
+
+
+
+
+```python
+ds = population - population2 # 2010년 대비 2015년 인구 증가수
+ds
+```
+
+
+
+
+    도시
+    대구         NaN
+    대전         NaN
+    부산     55546.0
+    서울    272830.0
+    인천    258416.0
+    Name: 인구, dtype: float64
+
+
+
+
+```python
+# ds.notnull() : null 값이 아닌 데이터만 true
+ds.notnull() 
+```
+
+
+
+
+    도시
+    대구    False
+    대전    False
+    부산     True
+    서울     True
+    인천     True
+    Name: 인구, dtype: bool
+
+
+
+
+```python
+ds[ds.notnull()]
+```
+
+
+
+
+    도시
+    부산     55546.0
+    서울    272830.0
+    인천    258416.0
+    Name: 인구, dtype: float64
+
+
+
+
+```python
+ds.isnull()
+```
+
+
+
+
+    도시
+    대구     True
+    대전     True
+    부산    False
+    서울    False
+    인천    False
+    Name: 인구, dtype: bool
+
+
+
+
+```python
+ds[ds.isnull()]
+```
+
+
+
+
+    도시
+    대구   NaN
+    대전   NaN
+    Name: 인구, dtype: float64
+
+
+
+
+```python
+rs = ((population - population2)/ population2)*100
+rs
+```
+
+
+
+
+    도시
+    대구         NaN
+    대전         NaN
+    부산    1.636984
+    서울    2.832690
+    인천    9.818107
+    Name: 인구, dtype: float64
+
+
+
+
+```python
+rs[rs.notnull()]
+```
+
+
+
+
+    도시
+    부산    1.636984
+    서울    2.832690
+    인천    9.818107
+    Name: 인구, dtype: float64
+
+
+
+
+```python
+rs["부산"] = 1.6 # 수정
+rs["대구"] = 1.41 # 추가
+del rs["서울"] # 삭제
+
+rs[rs.notnull()]
+```
+
+
+
+
+    도시
+    대구    1.410000
+    부산    1.600000
+    인천    9.818107
+    Name: 인구, dtype: float64
+
+
