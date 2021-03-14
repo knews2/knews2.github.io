@@ -1,0 +1,1263 @@
+### 데이터 정렬하기
+- 가격을 오름차순으로 정렬
+
+
+```python
+df.sort_values(by='가격') # 오름차순
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>지역</th>
+      <th>번지</th>
+      <th>본번</th>
+      <th>부번</th>
+      <th>아파트</th>
+      <th>면적당가격</th>
+      <th>계약년월</th>
+      <th>계약일</th>
+      <th>가격</th>
+      <th>층</th>
+      <th>건축년도</th>
+      <th>도로명</th>
+      <th>면적당가격</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>17024</th>
+      <td>경상북도 구미시 원평동</td>
+      <td>937-68</td>
+      <td>937</td>
+      <td>68</td>
+      <td>원평주공</td>
+      <td>40.3200</td>
+      <td>201910</td>
+      <td>7</td>
+      <td>600</td>
+      <td>4</td>
+      <td>1984</td>
+      <td>칠성로2길 16</td>
+      <td>14.880952</td>
+    </tr>
+    <tr>
+      <th>17022</th>
+      <td>경상북도 구미시 원평동</td>
+      <td>937-68</td>
+      <td>937</td>
+      <td>68</td>
+      <td>원평주공</td>
+      <td>49.2200</td>
+      <td>201910</td>
+      <td>4</td>
+      <td>700</td>
+      <td>3</td>
+      <td>1984</td>
+      <td>칠성로2길 15</td>
+      <td>14.221861</td>
+    </tr>
+    <tr>
+      <th>17637</th>
+      <td>경상북도 칠곡군 약목면 관호리</td>
+      <td>산74-10</td>
+      <td>74</td>
+      <td>10</td>
+      <td>성재</td>
+      <td>31.6200</td>
+      <td>201910</td>
+      <td>17</td>
+      <td>750</td>
+      <td>6</td>
+      <td>1990</td>
+      <td>관호8길 32-2</td>
+      <td>23.719165</td>
+    </tr>
+    <tr>
+      <th>17031</th>
+      <td>경상북도 구미시 원평동</td>
+      <td>937-68</td>
+      <td>937</td>
+      <td>68</td>
+      <td>원평주공</td>
+      <td>40.3200</td>
+      <td>201910</td>
+      <td>21</td>
+      <td>800</td>
+      <td>2</td>
+      <td>1984</td>
+      <td>칠성로2길 16</td>
+      <td>19.841270</td>
+    </tr>
+    <tr>
+      <th>17027</th>
+      <td>경상북도 구미시 원평동</td>
+      <td>937-68</td>
+      <td>937</td>
+      <td>68</td>
+      <td>원평주공</td>
+      <td>40.3200</td>
+      <td>201910</td>
+      <td>16</td>
+      <td>800</td>
+      <td>3</td>
+      <td>1984</td>
+      <td>칠성로2길 16</td>
+      <td>19.841270</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>27036</th>
+      <td>서울특별시 강남구 대치동</td>
+      <td>670</td>
+      <td>670</td>
+      <td>0</td>
+      <td>동부센트레빌</td>
+      <td>161.4700</td>
+      <td>201910</td>
+      <td>29</td>
+      <td>373000</td>
+      <td>3</td>
+      <td>2005</td>
+      <td>선릉로 206</td>
+      <td>2310.026630</td>
+    </tr>
+    <tr>
+      <th>26805</th>
+      <td>부산광역시 해운대구 우동</td>
+      <td>1407</td>
+      <td>1407</td>
+      <td>0</td>
+      <td>해운대두산위브더제니스</td>
+      <td>209.8332</td>
+      <td>201910</td>
+      <td>16</td>
+      <td>376640</td>
+      <td>70</td>
+      <td>2011</td>
+      <td>마린시티2로 33</td>
+      <td>1794.949512</td>
+    </tr>
+    <tr>
+      <th>29946</th>
+      <td>서울특별시 서초구 반포동</td>
+      <td>02월 12일</td>
+      <td>2</td>
+      <td>12</td>
+      <td>아크로리버파크</td>
+      <td>129.9200</td>
+      <td>201910</td>
+      <td>14</td>
+      <td>415000</td>
+      <td>8</td>
+      <td>2016</td>
+      <td>신반포로15길 19</td>
+      <td>3194.273399</td>
+    </tr>
+    <tr>
+      <th>27061</th>
+      <td>서울특별시 강남구 도곡동</td>
+      <td>202</td>
+      <td>202</td>
+      <td>0</td>
+      <td>상지리츠빌 카일룸</td>
+      <td>210.5000</td>
+      <td>201910</td>
+      <td>24</td>
+      <td>461000</td>
+      <td>2</td>
+      <td>2018</td>
+      <td>남부순환로373길 23</td>
+      <td>2190.023753</td>
+    </tr>
+    <tr>
+      <th>31258</th>
+      <td>서울특별시 용산구 한남동</td>
+      <td>810</td>
+      <td>810</td>
+      <td>0</td>
+      <td>한남더힐</td>
+      <td>233.0620</td>
+      <td>201910</td>
+      <td>24</td>
+      <td>485000</td>
+      <td>4</td>
+      <td>2011</td>
+      <td>독서당로 111</td>
+      <td>2080.991324</td>
+    </tr>
+  </tbody>
+</table>
+<p>42758 rows × 13 columns</p>
+</div>
+
+
+
+
+```python
+df.sort_values(by='가격', ascending = False) # 내림차순
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>지역</th>
+      <th>번지</th>
+      <th>본번</th>
+      <th>부번</th>
+      <th>아파트</th>
+      <th>면적당가격</th>
+      <th>계약년월</th>
+      <th>계약일</th>
+      <th>가격</th>
+      <th>층</th>
+      <th>건축년도</th>
+      <th>도로명</th>
+      <th>면적당가격</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>31258</th>
+      <td>서울특별시 용산구 한남동</td>
+      <td>810</td>
+      <td>810</td>
+      <td>0</td>
+      <td>한남더힐</td>
+      <td>233.0620</td>
+      <td>201910</td>
+      <td>24</td>
+      <td>485000</td>
+      <td>4</td>
+      <td>2011</td>
+      <td>독서당로 111</td>
+      <td>2080.991324</td>
+    </tr>
+    <tr>
+      <th>27061</th>
+      <td>서울특별시 강남구 도곡동</td>
+      <td>202</td>
+      <td>202</td>
+      <td>0</td>
+      <td>상지리츠빌 카일룸</td>
+      <td>210.5000</td>
+      <td>201910</td>
+      <td>24</td>
+      <td>461000</td>
+      <td>2</td>
+      <td>2018</td>
+      <td>남부순환로373길 23</td>
+      <td>2190.023753</td>
+    </tr>
+    <tr>
+      <th>29946</th>
+      <td>서울특별시 서초구 반포동</td>
+      <td>02월 12일</td>
+      <td>2</td>
+      <td>12</td>
+      <td>아크로리버파크</td>
+      <td>129.9200</td>
+      <td>201910</td>
+      <td>14</td>
+      <td>415000</td>
+      <td>8</td>
+      <td>2016</td>
+      <td>신반포로15길 19</td>
+      <td>3194.273399</td>
+    </tr>
+    <tr>
+      <th>26805</th>
+      <td>부산광역시 해운대구 우동</td>
+      <td>1407</td>
+      <td>1407</td>
+      <td>0</td>
+      <td>해운대두산위브더제니스</td>
+      <td>209.8332</td>
+      <td>201910</td>
+      <td>16</td>
+      <td>376640</td>
+      <td>70</td>
+      <td>2011</td>
+      <td>마린시티2로 33</td>
+      <td>1794.949512</td>
+    </tr>
+    <tr>
+      <th>27036</th>
+      <td>서울특별시 강남구 대치동</td>
+      <td>670</td>
+      <td>670</td>
+      <td>0</td>
+      <td>동부센트레빌</td>
+      <td>161.4700</td>
+      <td>201910</td>
+      <td>29</td>
+      <td>373000</td>
+      <td>3</td>
+      <td>2005</td>
+      <td>선릉로 206</td>
+      <td>2310.026630</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>17027</th>
+      <td>경상북도 구미시 원평동</td>
+      <td>937-68</td>
+      <td>937</td>
+      <td>68</td>
+      <td>원평주공</td>
+      <td>40.3200</td>
+      <td>201910</td>
+      <td>16</td>
+      <td>800</td>
+      <td>3</td>
+      <td>1984</td>
+      <td>칠성로2길 16</td>
+      <td>19.841270</td>
+    </tr>
+    <tr>
+      <th>17025</th>
+      <td>경상북도 구미시 원평동</td>
+      <td>937-68</td>
+      <td>937</td>
+      <td>68</td>
+      <td>원평주공</td>
+      <td>40.4500</td>
+      <td>201910</td>
+      <td>7</td>
+      <td>800</td>
+      <td>1</td>
+      <td>1984</td>
+      <td>칠성로2길 16</td>
+      <td>19.777503</td>
+    </tr>
+    <tr>
+      <th>17637</th>
+      <td>경상북도 칠곡군 약목면 관호리</td>
+      <td>산74-10</td>
+      <td>74</td>
+      <td>10</td>
+      <td>성재</td>
+      <td>31.6200</td>
+      <td>201910</td>
+      <td>17</td>
+      <td>750</td>
+      <td>6</td>
+      <td>1990</td>
+      <td>관호8길 32-2</td>
+      <td>23.719165</td>
+    </tr>
+    <tr>
+      <th>17022</th>
+      <td>경상북도 구미시 원평동</td>
+      <td>937-68</td>
+      <td>937</td>
+      <td>68</td>
+      <td>원평주공</td>
+      <td>49.2200</td>
+      <td>201910</td>
+      <td>4</td>
+      <td>700</td>
+      <td>3</td>
+      <td>1984</td>
+      <td>칠성로2길 15</td>
+      <td>14.221861</td>
+    </tr>
+    <tr>
+      <th>17024</th>
+      <td>경상북도 구미시 원평동</td>
+      <td>937-68</td>
+      <td>937</td>
+      <td>68</td>
+      <td>원평주공</td>
+      <td>40.3200</td>
+      <td>201910</td>
+      <td>7</td>
+      <td>600</td>
+      <td>4</td>
+      <td>1984</td>
+      <td>칠성로2길 16</td>
+      <td>14.880952</td>
+    </tr>
+  </tbody>
+</table>
+<p>42758 rows × 13 columns</p>
+</div>
+
+
+
+### 원하는 값 바꾸기
+- 가격이 800원 미만인 값들을 0으로 바꾸기
+
+
+```python
+df.loc[df['가격']<800, '가격'] = 0
+```
+
+
+```python
+df2 = df.sort_values(by='가격')
+```
+
+
+```python
+gj = df2[df2['지역'].str.contains('광주')]
+```
+
+
+```python
+gj[gj['지역'].str.contains('일곡')]
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>지역</th>
+      <th>번지</th>
+      <th>본번</th>
+      <th>부번</th>
+      <th>아파트</th>
+      <th>면적</th>
+      <th>계약년월</th>
+      <th>계약일</th>
+      <th>가격</th>
+      <th>층</th>
+      <th>건축년도</th>
+      <th>도로명</th>
+      <th>면적당가격</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>19411</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>849-2</td>
+      <td>849</td>
+      <td>2</td>
+      <td>청솔</td>
+      <td>48.450</td>
+      <td>201910</td>
+      <td>7</td>
+      <td>8000</td>
+      <td>4</td>
+      <td>2000</td>
+      <td>일곡로 80</td>
+      <td>165.118679</td>
+    </tr>
+    <tr>
+      <th>19415</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>817-5</td>
+      <td>817</td>
+      <td>5</td>
+      <td>청솔3차</td>
+      <td>48.450</td>
+      <td>201910</td>
+      <td>25</td>
+      <td>8400</td>
+      <td>7</td>
+      <td>2000</td>
+      <td>일곡마을로 225</td>
+      <td>173.374613</td>
+    </tr>
+    <tr>
+      <th>19412</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>850-4</td>
+      <td>850</td>
+      <td>4</td>
+      <td>청솔2차</td>
+      <td>48.450</td>
+      <td>201910</td>
+      <td>5</td>
+      <td>8500</td>
+      <td>1</td>
+      <td>2000</td>
+      <td>설죽로 555</td>
+      <td>175.438596</td>
+    </tr>
+    <tr>
+      <th>19416</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>819-3</td>
+      <td>819</td>
+      <td>3</td>
+      <td>청솔4차</td>
+      <td>48.450</td>
+      <td>201910</td>
+      <td>1</td>
+      <td>9000</td>
+      <td>2</td>
+      <td>2001</td>
+      <td>일곡마을로 10</td>
+      <td>185.758514</td>
+    </tr>
+    <tr>
+      <th>19413</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>850-4</td>
+      <td>850</td>
+      <td>4</td>
+      <td>청솔2차</td>
+      <td>48.450</td>
+      <td>201910</td>
+      <td>15</td>
+      <td>9000</td>
+      <td>11</td>
+      <td>2000</td>
+      <td>설죽로 555</td>
+      <td>185.758514</td>
+    </tr>
+    <tr>
+      <th>19410</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>849-2</td>
+      <td>849</td>
+      <td>2</td>
+      <td>청솔</td>
+      <td>48.450</td>
+      <td>201910</td>
+      <td>1</td>
+      <td>9450</td>
+      <td>13</td>
+      <td>2000</td>
+      <td>일곡로 80</td>
+      <td>195.046440</td>
+    </tr>
+    <tr>
+      <th>19418</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>819-3</td>
+      <td>819</td>
+      <td>3</td>
+      <td>청솔4차</td>
+      <td>48.450</td>
+      <td>201910</td>
+      <td>22</td>
+      <td>9500</td>
+      <td>1</td>
+      <td>2001</td>
+      <td>일곡마을로 10</td>
+      <td>196.078431</td>
+    </tr>
+    <tr>
+      <th>19417</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>819-3</td>
+      <td>819</td>
+      <td>3</td>
+      <td>청솔4차</td>
+      <td>48.450</td>
+      <td>201910</td>
+      <td>14</td>
+      <td>9900</td>
+      <td>8</td>
+      <td>2001</td>
+      <td>일곡마을로 10</td>
+      <td>204.334365</td>
+    </tr>
+    <tr>
+      <th>19414</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>817-5</td>
+      <td>817</td>
+      <td>5</td>
+      <td>청솔3차</td>
+      <td>48.450</td>
+      <td>201910</td>
+      <td>2</td>
+      <td>10000</td>
+      <td>4</td>
+      <td>2000</td>
+      <td>일곡마을로 225</td>
+      <td>206.398349</td>
+    </tr>
+    <tr>
+      <th>19402</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>848-2</td>
+      <td>848</td>
+      <td>2</td>
+      <td>대림1</td>
+      <td>59.935</td>
+      <td>201910</td>
+      <td>17</td>
+      <td>13500</td>
+      <td>20</td>
+      <td>1997</td>
+      <td>양일로305번길 11</td>
+      <td>225.244014</td>
+    </tr>
+    <tr>
+      <th>19403</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>849-9</td>
+      <td>849</td>
+      <td>9</td>
+      <td>대우</td>
+      <td>59.946</td>
+      <td>201910</td>
+      <td>1</td>
+      <td>13700</td>
+      <td>21</td>
+      <td>1998</td>
+      <td>일곡택지로 50</td>
+      <td>228.539018</td>
+    </tr>
+    <tr>
+      <th>19424</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>848-1</td>
+      <td>848</td>
+      <td>1</td>
+      <td>현대2</td>
+      <td>59.360</td>
+      <td>201910</td>
+      <td>11</td>
+      <td>13950</td>
+      <td>20</td>
+      <td>1998</td>
+      <td>일곡마을로 55</td>
+      <td>235.006739</td>
+    </tr>
+    <tr>
+      <th>19425</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>848-1</td>
+      <td>848</td>
+      <td>1</td>
+      <td>현대2</td>
+      <td>59.760</td>
+      <td>201910</td>
+      <td>22</td>
+      <td>14000</td>
+      <td>12</td>
+      <td>1998</td>
+      <td>일곡마을로 55</td>
+      <td>234.270415</td>
+    </tr>
+    <tr>
+      <th>19421</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>849-1</td>
+      <td>849</td>
+      <td>1</td>
+      <td>한일</td>
+      <td>59.915</td>
+      <td>201910</td>
+      <td>1</td>
+      <td>14000</td>
+      <td>6</td>
+      <td>1997</td>
+      <td>일곡택지로 60</td>
+      <td>233.664358</td>
+    </tr>
+    <tr>
+      <th>19409</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>849-8</td>
+      <td>849</td>
+      <td>8</td>
+      <td>진로</td>
+      <td>59.360</td>
+      <td>201910</td>
+      <td>21</td>
+      <td>14300</td>
+      <td>5</td>
+      <td>1997</td>
+      <td>일곡마을로 50</td>
+      <td>240.902965</td>
+    </tr>
+    <tr>
+      <th>19419</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>850-3</td>
+      <td>850</td>
+      <td>3</td>
+      <td>한국</td>
+      <td>59.940</td>
+      <td>201910</td>
+      <td>23</td>
+      <td>14400</td>
+      <td>13</td>
+      <td>1996</td>
+      <td>설죽로 565</td>
+      <td>240.240240</td>
+    </tr>
+    <tr>
+      <th>19405</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>849-9</td>
+      <td>849</td>
+      <td>9</td>
+      <td>대우</td>
+      <td>59.946</td>
+      <td>201910</td>
+      <td>14</td>
+      <td>14500</td>
+      <td>10</td>
+      <td>1998</td>
+      <td>일곡택지로 50</td>
+      <td>241.884363</td>
+    </tr>
+    <tr>
+      <th>19420</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>849-1</td>
+      <td>849</td>
+      <td>1</td>
+      <td>한일</td>
+      <td>59.915</td>
+      <td>201910</td>
+      <td>1</td>
+      <td>14500</td>
+      <td>11</td>
+      <td>1997</td>
+      <td>일곡택지로 60</td>
+      <td>242.009513</td>
+    </tr>
+    <tr>
+      <th>19422</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>849-1</td>
+      <td>849</td>
+      <td>1</td>
+      <td>한일</td>
+      <td>59.915</td>
+      <td>201910</td>
+      <td>2</td>
+      <td>14700</td>
+      <td>13</td>
+      <td>1997</td>
+      <td>일곡택지로 60</td>
+      <td>245.347576</td>
+    </tr>
+    <tr>
+      <th>19423</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>848-1</td>
+      <td>848</td>
+      <td>1</td>
+      <td>현대2</td>
+      <td>59.360</td>
+      <td>201910</td>
+      <td>3</td>
+      <td>14900</td>
+      <td>14</td>
+      <td>1998</td>
+      <td>일곡마을로 55</td>
+      <td>251.010782</td>
+    </tr>
+    <tr>
+      <th>19430</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>850-5</td>
+      <td>850</td>
+      <td>5</td>
+      <td>호반일신</td>
+      <td>59.935</td>
+      <td>201910</td>
+      <td>7</td>
+      <td>15500</td>
+      <td>3</td>
+      <td>1997</td>
+      <td>설죽로 545</td>
+      <td>258.613498</td>
+    </tr>
+    <tr>
+      <th>19404</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>849-9</td>
+      <td>849</td>
+      <td>9</td>
+      <td>대우</td>
+      <td>59.946</td>
+      <td>201910</td>
+      <td>11</td>
+      <td>15600</td>
+      <td>16</td>
+      <td>1998</td>
+      <td>일곡택지로 50</td>
+      <td>260.234211</td>
+    </tr>
+    <tr>
+      <th>19426</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>819-1</td>
+      <td>819</td>
+      <td>1</td>
+      <td>현대3</td>
+      <td>84.985</td>
+      <td>201910</td>
+      <td>1</td>
+      <td>20000</td>
+      <td>18</td>
+      <td>1998</td>
+      <td>일곡로 120</td>
+      <td>235.335647</td>
+    </tr>
+    <tr>
+      <th>19428</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>819-1</td>
+      <td>819</td>
+      <td>1</td>
+      <td>현대3</td>
+      <td>84.985</td>
+      <td>201910</td>
+      <td>14</td>
+      <td>21200</td>
+      <td>8</td>
+      <td>1998</td>
+      <td>일곡로 120</td>
+      <td>249.455786</td>
+    </tr>
+    <tr>
+      <th>19427</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>819-1</td>
+      <td>819</td>
+      <td>1</td>
+      <td>현대3</td>
+      <td>84.985</td>
+      <td>201910</td>
+      <td>12</td>
+      <td>21300</td>
+      <td>14</td>
+      <td>1998</td>
+      <td>일곡로 120</td>
+      <td>250.632465</td>
+    </tr>
+    <tr>
+      <th>19429</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>819-1</td>
+      <td>819</td>
+      <td>1</td>
+      <td>현대3</td>
+      <td>84.985</td>
+      <td>201910</td>
+      <td>16</td>
+      <td>21500</td>
+      <td>9</td>
+      <td>1998</td>
+      <td>일곡로 120</td>
+      <td>252.985821</td>
+    </tr>
+    <tr>
+      <th>19407</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>816-4</td>
+      <td>816</td>
+      <td>4</td>
+      <td>삼호</td>
+      <td>99.990</td>
+      <td>201910</td>
+      <td>22</td>
+      <td>26100</td>
+      <td>15</td>
+      <td>1998</td>
+      <td>설죽로 600</td>
+      <td>261.026103</td>
+    </tr>
+    <tr>
+      <th>19406</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>816-3</td>
+      <td>816</td>
+      <td>3</td>
+      <td>동아2</td>
+      <td>99.860</td>
+      <td>201910</td>
+      <td>14</td>
+      <td>26700</td>
+      <td>21</td>
+      <td>2000</td>
+      <td>우치로537번길 10</td>
+      <td>267.374324</td>
+    </tr>
+    <tr>
+      <th>19408</th>
+      <td>광주광역시 북구 일곡동</td>
+      <td>814-4</td>
+      <td>814</td>
+      <td>4</td>
+      <td>쌍용</td>
+      <td>96.870</td>
+      <td>201910</td>
+      <td>11</td>
+      <td>28300</td>
+      <td>14</td>
+      <td>1997</td>
+      <td>설죽로 585</td>
+      <td>292.144111</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+### 지역에 강릉이라는 단어가 있는 데이터 값 바꾸기
+
+
+```python
+# str : 문자열 형식으로 데이터를 변환 / find 함수를 적용하기 위해서
+df['지역'].str.find('강릉')
+# -1: 찾는 문자열이 없다.
+# -1이 아닌 값: n번째 위치에 강릉이라는 문자열 시작
+```
+
+
+
+
+    0        4
+    1        4
+    2        4
+    3        4
+    4        4
+            ..
+    42753   -1
+    42754   -1
+    42755   -1
+    42756   -1
+    42757   -1
+    Name: 지역, Length: 42758, dtype: int64
+
+
+
+
+```python
+df['지역'].str.contains('강릉')
+```
+
+
+
+
+    0         True
+    1         True
+    2         True
+    3         True
+    4         True
+             ...  
+    42753    False
+    42754    False
+    42755    False
+    42756    False
+    42757    False
+    Name: 지역, Length: 42758, dtype: bool
+
+
+
+
+```python
+df.loc[df['지역'].str.find('강릉') != -1, '지역'] = '강릉'
+```
+
+
+```python
+df
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>지역</th>
+      <th>번지</th>
+      <th>본번</th>
+      <th>부번</th>
+      <th>아파트</th>
+      <th>면적</th>
+      <th>계약년월</th>
+      <th>계약일</th>
+      <th>가격</th>
+      <th>층</th>
+      <th>건축년도</th>
+      <th>도로명</th>
+      <th>면적당가격</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>강릉</td>
+      <td>202</td>
+      <td>202</td>
+      <td>0</td>
+      <td>송정한신</td>
+      <td>59.800</td>
+      <td>201910</td>
+      <td>4</td>
+      <td>10900</td>
+      <td>5</td>
+      <td>1997</td>
+      <td>경강로2539번길 8</td>
+      <td>182.274247</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>강릉</td>
+      <td>202</td>
+      <td>202</td>
+      <td>0</td>
+      <td>송정한신</td>
+      <td>116.175</td>
+      <td>201910</td>
+      <td>31</td>
+      <td>18500</td>
+      <td>10</td>
+      <td>1997</td>
+      <td>경강로2539번길 8</td>
+      <td>159.242522</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>강릉</td>
+      <td>289</td>
+      <td>289</td>
+      <td>0</td>
+      <td>송정해변신도브래뉴아파트</td>
+      <td>84.990</td>
+      <td>201910</td>
+      <td>5</td>
+      <td>25000</td>
+      <td>6</td>
+      <td>2005</td>
+      <td>경강로2539번길 22</td>
+      <td>294.152253</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>강릉</td>
+      <td>289</td>
+      <td>289</td>
+      <td>0</td>
+      <td>송정해변신도브래뉴아파트</td>
+      <td>84.990</td>
+      <td>201910</td>
+      <td>12</td>
+      <td>20600</td>
+      <td>3</td>
+      <td>2005</td>
+      <td>경강로2539번길 22</td>
+      <td>242.381457</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>강릉</td>
+      <td>289</td>
+      <td>289</td>
+      <td>0</td>
+      <td>송정해변신도브래뉴아파트</td>
+      <td>84.990</td>
+      <td>201910</td>
+      <td>20</td>
+      <td>20500</td>
+      <td>1</td>
+      <td>2005</td>
+      <td>경강로2539번길 22</td>
+      <td>241.204848</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>42753</th>
+      <td>충청북도 충주시 호암동</td>
+      <td>547-6</td>
+      <td>547</td>
+      <td>6</td>
+      <td>호반현대</td>
+      <td>59.760</td>
+      <td>201910</td>
+      <td>29</td>
+      <td>7000</td>
+      <td>3</td>
+      <td>1994</td>
+      <td>신촌2길 28</td>
+      <td>117.135207</td>
+    </tr>
+    <tr>
+      <th>42754</th>
+      <td>충청북도 충주시 호암동</td>
+      <td>221-23</td>
+      <td>221</td>
+      <td>23</td>
+      <td>호암리버빌(1단지)</td>
+      <td>84.680</td>
+      <td>201910</td>
+      <td>5</td>
+      <td>12000</td>
+      <td>15</td>
+      <td>2002</td>
+      <td>원호암5길 32</td>
+      <td>141.709967</td>
+    </tr>
+    <tr>
+      <th>42755</th>
+      <td>충청북도 충주시 호암동</td>
+      <td>221-23</td>
+      <td>221</td>
+      <td>23</td>
+      <td>호암리버빌(1단지)</td>
+      <td>84.680</td>
+      <td>201910</td>
+      <td>15</td>
+      <td>11000</td>
+      <td>7</td>
+      <td>2002</td>
+      <td>원호암5길 32</td>
+      <td>129.900803</td>
+    </tr>
+    <tr>
+      <th>42756</th>
+      <td>충청북도 충주시 호암동</td>
+      <td>221-23</td>
+      <td>221</td>
+      <td>23</td>
+      <td>호암리버빌(1단지)</td>
+      <td>84.680</td>
+      <td>201910</td>
+      <td>17</td>
+      <td>12000</td>
+      <td>14</td>
+      <td>2002</td>
+      <td>원호암5길 32</td>
+      <td>141.709967</td>
+    </tr>
+    <tr>
+      <th>42757</th>
+      <td>충청북도 충주시 호암동</td>
+      <td>221-23</td>
+      <td>221</td>
+      <td>23</td>
+      <td>호암리버빌(1단지)</td>
+      <td>84.680</td>
+      <td>201910</td>
+      <td>26</td>
+      <td>11200</td>
+      <td>11</td>
+      <td>2002</td>
+      <td>원호암5길 32</td>
+      <td>132.262636</td>
+    </tr>
+  </tbody>
+</table>
+<p>42758 rows × 13 columns</p>
+</div>
+
+
