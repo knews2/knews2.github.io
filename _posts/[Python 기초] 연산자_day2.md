@@ -1,0 +1,283 @@
+### 연산자
+- 산술 연산자: + - * /(나누기 값) //(나누기 몫) %(나누기 나머지)
+- 지수 연산자: ** (제곱)
+- 대입(복합) 연산자: = += -= *= /= //= %=
+- 관계(비교) 연산자: > >= < <= == !=
+- 논리 연산자: not and or
+- 삼항 연산자: A if 조건식 else B 
+
+
+```python
+num1 = 7
+num2 = 2
+
+print(num1/num2) #나누기
+print(num1%num2) #나머지
+print(num1//num2)#몫
+```
+
+    3.5
+    1
+    3
+    
+
+
+```python
+str1 = "안녕"
+str2 = "하세요"
+
+print(str1 + str2)
+```
+
+    안녕하세요
+    
+
+
+```python
+num1 = 10
+str2 = "7"
+
+print(str(num1) + str2)
+print(num1 + int(str2))
+```
+
+    107
+    17
+    
+
+
+```python
+# 형변환
+s = str(num1)
+```
+
+
+```python
+# 자료형 type 알려줌
+type(s)
+```
+
+
+
+
+    str
+
+
+
+
+```python
+type(num1)
+```
+
+
+
+
+    int
+
+
+
+
+```python
+i = int(str2)
+```
+
+
+```python
+type(i)
+```
+
+
+
+
+    int
+
+
+
+
+```python
+num1 = 23
+num2 = 3
+print("더하기 결과:", num1 + num2)
+print("빼기 결과 :", num1 - num2)
+print("곱하기 결과 :", num1 * num2)
+print("나누기 결과 :", num1/num2)
+```
+
+    더하기 결과: 26
+    빼기 결과 : 20
+    곱하기 결과 : 69
+    나누기 결과 : 7.666666666666667
+    
+
+
+```python
+print("더하기 결과 : {}".format(num1 + num2))
+print("빼기 결과 : {}".format(num1 - num2))
+print("곱하기 결과 : {}".format(num1 * num2))
+print("나누기 결과 : {}".format(num1 / num2))
+```
+
+    더하기 결과 : 26
+    빼기 결과 : 20
+    곱하기 결과 : 69
+    나누기 결과 : 7.666666666666667
+    
+
+
+```python
+num1 = int(input("정수를 입력하세요 >> "))
+```
+
+    정수를 입력하세요 >> 10
+    
+
+
+```python
+type(num1)
+```
+
+
+
+
+    int
+
+
+
+
+```python
+num1 = int(input("num1 : "))
+num2 = int(input("num2 : "))
+
+print("더하기 결과 : {}".format(num1 + num2))
+print("빼기 결과 : {}".format(num1 - num2))
+print("곱하기 결과 : {}".format(num1 * num2))
+print("나누기 결과 : {}".format(num1 / num2))
+```
+
+    num1 : 30
+    num2 : 5
+    더하기 결과 : 35
+    빼기 결과 : 25
+    곱하기 결과 : 150
+    나누기 결과 : 6.0
+    
+
+
+```python
+python = int(input("python 점수 입력 >> "))
+m_l = int(input("머신러닝 점수 입력 >> "))
+d_l = int(input("딥러닝 점수 입력 >> "))
+
+print("합계 : {}".format(python + m_l + d_l))
+print("평균 : {}".format((python + m_l + d_l)/3))
+```
+
+    python 점수 입력 >> 100
+    머신러닝 점수 입력 >> 80
+    딥러닝 점수 입력 >> 60
+    합계 : 240
+    평균 : 80.0
+    
+
+
+```python
+num = int(input("정수 입력 >>"))
+power = int(input("지수 입력 >>"))
+print("{}의 {}승은 {}입니다.".format(num, power, num**power))
+```
+
+    정수 입력 >>2
+    지수 입력 >>3
+    2의 3승은 8입니다.
+    
+
+### 대입(복합) 연산자
+- a += b > a = a+b
+- a -= 3 > a = a-3 
+
+
+```python
+num = 27
+num += 3
+print(num)
+```
+
+    30
+    
+
+
+```python
+num += 3
+num += 3
+num += 3
+
+print(num)
+```
+
+    39
+    
+
+### 삼항연산자
+-  a if 조건식 else b
+
+
+```python
+score = 80
+"합격" if score >= 60 else "불합격"
+```
+
+
+
+
+    '합격'
+
+
+
+
+```python
+score = 50
+"합격" if score >= 60 else "불합격"
+```
+
+
+
+
+    '불합격'
+
+
+
+
+```python
+num = int(input("정수 입력 >> "))
+print("{}는(은) 홀수입니다.".format(num)) if num%2 != 0 else print("{}는(은) 짝수입니다.".format(num))
+```
+
+    정수 입력 >> 33
+    33는(은) 홀수입니다.
+    
+
+
+```python
+num = int(input("정수 입력 >> "))
+print("{}는(은) 짝수입니다.".format(num)) if num%2 == 0 else print("{}는(은) 홀수입니다.".format(num))
+```
+
+    정수 입력 >> 22
+    22는(은) 짝수입니다.
+    
+
+
+```python
+num = int(input("정수 입력 >> "))
+r = "짝수" if num%2 == 0 else "홀수"
+print("{}는(은) {}입니다.".format(num, r))
+```
+
+    정수 입력 >> 22
+    22는(은) 짝수입니다.
+    
+
+
+```python
+
+```
