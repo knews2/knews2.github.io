@@ -1,0 +1,1693 @@
+## 부분출력
+아파트부터 층까지 열 출력하기
+
+
+```python
+import pandas as pd
+df = pd.read_csv('apt.csv', encoding="cp949")
+```
+
+
+```python
+# 전체 출력
+df.loc[:]
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>지역</th>
+      <th>번지</th>
+      <th>본번</th>
+      <th>부번</th>
+      <th>아파트</th>
+      <th>면적</th>
+      <th>계약년월</th>
+      <th>계약일</th>
+      <th>가격</th>
+      <th>층</th>
+      <th>건축년도</th>
+      <th>도로명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>강원도 강릉시 견소동</td>
+      <td>202</td>
+      <td>202</td>
+      <td>0</td>
+      <td>송정한신</td>
+      <td>59.800</td>
+      <td>201910</td>
+      <td>4</td>
+      <td>10900</td>
+      <td>5</td>
+      <td>1997</td>
+      <td>경강로2539번길 8</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>강원도 강릉시 견소동</td>
+      <td>202</td>
+      <td>202</td>
+      <td>0</td>
+      <td>송정한신</td>
+      <td>116.175</td>
+      <td>201910</td>
+      <td>31</td>
+      <td>18500</td>
+      <td>10</td>
+      <td>1997</td>
+      <td>경강로2539번길 8</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>강원도 강릉시 견소동</td>
+      <td>289</td>
+      <td>289</td>
+      <td>0</td>
+      <td>송정해변신도브래뉴아파트</td>
+      <td>84.990</td>
+      <td>201910</td>
+      <td>5</td>
+      <td>25000</td>
+      <td>6</td>
+      <td>2005</td>
+      <td>경강로2539번길 22</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>강원도 강릉시 견소동</td>
+      <td>289</td>
+      <td>289</td>
+      <td>0</td>
+      <td>송정해변신도브래뉴아파트</td>
+      <td>84.990</td>
+      <td>201910</td>
+      <td>12</td>
+      <td>20600</td>
+      <td>3</td>
+      <td>2005</td>
+      <td>경강로2539번길 22</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>강원도 강릉시 견소동</td>
+      <td>289</td>
+      <td>289</td>
+      <td>0</td>
+      <td>송정해변신도브래뉴아파트</td>
+      <td>84.990</td>
+      <td>201910</td>
+      <td>20</td>
+      <td>20500</td>
+      <td>1</td>
+      <td>2005</td>
+      <td>경강로2539번길 22</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>42753</th>
+      <td>충청북도 충주시 호암동</td>
+      <td>547-6</td>
+      <td>547</td>
+      <td>6</td>
+      <td>호반현대</td>
+      <td>59.760</td>
+      <td>201910</td>
+      <td>29</td>
+      <td>7000</td>
+      <td>3</td>
+      <td>1994</td>
+      <td>신촌2길 28</td>
+    </tr>
+    <tr>
+      <th>42754</th>
+      <td>충청북도 충주시 호암동</td>
+      <td>221-23</td>
+      <td>221</td>
+      <td>23</td>
+      <td>호암리버빌(1단지)</td>
+      <td>84.680</td>
+      <td>201910</td>
+      <td>5</td>
+      <td>12000</td>
+      <td>15</td>
+      <td>2002</td>
+      <td>원호암5길 32</td>
+    </tr>
+    <tr>
+      <th>42755</th>
+      <td>충청북도 충주시 호암동</td>
+      <td>221-23</td>
+      <td>221</td>
+      <td>23</td>
+      <td>호암리버빌(1단지)</td>
+      <td>84.680</td>
+      <td>201910</td>
+      <td>15</td>
+      <td>11000</td>
+      <td>7</td>
+      <td>2002</td>
+      <td>원호암5길 32</td>
+    </tr>
+    <tr>
+      <th>42756</th>
+      <td>충청북도 충주시 호암동</td>
+      <td>221-23</td>
+      <td>221</td>
+      <td>23</td>
+      <td>호암리버빌(1단지)</td>
+      <td>84.680</td>
+      <td>201910</td>
+      <td>17</td>
+      <td>12000</td>
+      <td>14</td>
+      <td>2002</td>
+      <td>원호암5길 32</td>
+    </tr>
+    <tr>
+      <th>42757</th>
+      <td>충청북도 충주시 호암동</td>
+      <td>221-23</td>
+      <td>221</td>
+      <td>23</td>
+      <td>호암리버빌(1단지)</td>
+      <td>84.680</td>
+      <td>201910</td>
+      <td>26</td>
+      <td>11200</td>
+      <td>11</td>
+      <td>2002</td>
+      <td>원호암5길 32</td>
+    </tr>
+  </tbody>
+</table>
+<p>42758 rows × 12 columns</p>
+</div>
+
+
+
+
+```python
+# 아파트부터 층까지 열 출력하기
+df.loc[:, '아파트':'층']
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>아파트</th>
+      <th>면적</th>
+      <th>계약년월</th>
+      <th>계약일</th>
+      <th>가격</th>
+      <th>층</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>송정한신</td>
+      <td>59.800</td>
+      <td>201910</td>
+      <td>4</td>
+      <td>10900</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>송정한신</td>
+      <td>116.175</td>
+      <td>201910</td>
+      <td>31</td>
+      <td>18500</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>송정해변신도브래뉴아파트</td>
+      <td>84.990</td>
+      <td>201910</td>
+      <td>5</td>
+      <td>25000</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>송정해변신도브래뉴아파트</td>
+      <td>84.990</td>
+      <td>201910</td>
+      <td>12</td>
+      <td>20600</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>송정해변신도브래뉴아파트</td>
+      <td>84.990</td>
+      <td>201910</td>
+      <td>20</td>
+      <td>20500</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>42753</th>
+      <td>호반현대</td>
+      <td>59.760</td>
+      <td>201910</td>
+      <td>29</td>
+      <td>7000</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>42754</th>
+      <td>호암리버빌(1단지)</td>
+      <td>84.680</td>
+      <td>201910</td>
+      <td>5</td>
+      <td>12000</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>42755</th>
+      <td>호암리버빌(1단지)</td>
+      <td>84.680</td>
+      <td>201910</td>
+      <td>15</td>
+      <td>11000</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>42756</th>
+      <td>호암리버빌(1단지)</td>
+      <td>84.680</td>
+      <td>201910</td>
+      <td>17</td>
+      <td>12000</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>42757</th>
+      <td>호암리버빌(1단지)</td>
+      <td>84.680</td>
+      <td>201910</td>
+      <td>26</td>
+      <td>11200</td>
+      <td>11</td>
+    </tr>
+  </tbody>
+</table>
+<p>42758 rows × 6 columns</p>
+</div>
+
+
+
+
+```python
+# 데이터 프레임으로 출력하기
+df.loc[:, ['지역']]
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>지역</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>강원도 강릉시 견소동</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>강원도 강릉시 견소동</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>강원도 강릉시 견소동</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>강원도 강릉시 견소동</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>강원도 강릉시 견소동</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>42753</th>
+      <td>충청북도 충주시 호암동</td>
+    </tr>
+    <tr>
+      <th>42754</th>
+      <td>충청북도 충주시 호암동</td>
+    </tr>
+    <tr>
+      <th>42755</th>
+      <td>충청북도 충주시 호암동</td>
+    </tr>
+    <tr>
+      <th>42756</th>
+      <td>충청북도 충주시 호암동</td>
+    </tr>
+    <tr>
+      <th>42757</th>
+      <td>충청북도 충주시 호암동</td>
+    </tr>
+  </tbody>
+</table>
+<p>42758 rows × 1 columns</p>
+</div>
+
+
+
+### 조건별로 출력하기
+- 면적이 130 이상인 아파트 출력
+
+
+```python
+df[df.면적 >= 130]
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>지역</th>
+      <th>번지</th>
+      <th>본번</th>
+      <th>부번</th>
+      <th>아파트</th>
+      <th>면적</th>
+      <th>계약년월</th>
+      <th>계약일</th>
+      <th>가격</th>
+      <th>층</th>
+      <th>건축년도</th>
+      <th>도로명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>6</th>
+      <td>강원도 강릉시 교동</td>
+      <td>1982</td>
+      <td>1982</td>
+      <td>0</td>
+      <td>강릉교동롯데캐슬1단지</td>
+      <td>135.1727</td>
+      <td>201910</td>
+      <td>21</td>
+      <td>34300</td>
+      <td>9</td>
+      <td>2009</td>
+      <td>화부산로99번길 12</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>강원도 강릉시 남문동</td>
+      <td>183-2</td>
+      <td>183</td>
+      <td>2</td>
+      <td>삼익그린맨션</td>
+      <td>164.7540</td>
+      <td>201910</td>
+      <td>15</td>
+      <td>21000</td>
+      <td>12</td>
+      <td>1992</td>
+      <td>홍제로 7-17</td>
+    </tr>
+    <tr>
+      <th>334</th>
+      <td>강원도 속초시 금호동</td>
+      <td>629</td>
+      <td>629</td>
+      <td>0</td>
+      <td>보람레이크더하임</td>
+      <td>156.7600</td>
+      <td>201910</td>
+      <td>16</td>
+      <td>29500</td>
+      <td>1</td>
+      <td>2008</td>
+      <td>영랑호반길 115-13</td>
+    </tr>
+    <tr>
+      <th>433</th>
+      <td>강원도 원주시 개운동</td>
+      <td>01월 28일</td>
+      <td>28</td>
+      <td>1</td>
+      <td>원주힐스테이트</td>
+      <td>133.9912</td>
+      <td>201910</td>
+      <td>5</td>
+      <td>26000</td>
+      <td>16</td>
+      <td>2006</td>
+      <td>행구로 54</td>
+    </tr>
+    <tr>
+      <th>434</th>
+      <td>강원도 원주시 개운동</td>
+      <td>01월 28일</td>
+      <td>28</td>
+      <td>1</td>
+      <td>원주힐스테이트</td>
+      <td>137.4292</td>
+      <td>201910</td>
+      <td>31</td>
+      <td>24000</td>
+      <td>14</td>
+      <td>2006</td>
+      <td>행구로 54</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>42595</th>
+      <td>충청북도 충주시 문화동</td>
+      <td>2260</td>
+      <td>2260</td>
+      <td>0</td>
+      <td>럭키</td>
+      <td>156.7900</td>
+      <td>201910</td>
+      <td>21</td>
+      <td>15000</td>
+      <td>3</td>
+      <td>1993</td>
+      <td>중원대로 3379</td>
+    </tr>
+    <tr>
+      <th>42607</th>
+      <td>충청북도 충주시 안림동</td>
+      <td>1166</td>
+      <td>1166</td>
+      <td>0</td>
+      <td>엘리시아</td>
+      <td>136.1287</td>
+      <td>201910</td>
+      <td>19</td>
+      <td>18500</td>
+      <td>12</td>
+      <td>2007</td>
+      <td>국원초1길 48</td>
+    </tr>
+    <tr>
+      <th>42663</th>
+      <td>충청북도 충주시 연수동</td>
+      <td>1627</td>
+      <td>1627</td>
+      <td>0</td>
+      <td>연수힐스테이트</td>
+      <td>143.2109</td>
+      <td>201910</td>
+      <td>14</td>
+      <td>31500</td>
+      <td>13</td>
+      <td>2007</td>
+      <td>연수동산로 26</td>
+    </tr>
+    <tr>
+      <th>42736</th>
+      <td>충청북도 충주시 칠금동</td>
+      <td>626</td>
+      <td>626</td>
+      <td>0</td>
+      <td>삼일</td>
+      <td>143.5800</td>
+      <td>201910</td>
+      <td>20</td>
+      <td>18500</td>
+      <td>12</td>
+      <td>1996</td>
+      <td>금릉로 17</td>
+    </tr>
+    <tr>
+      <th>42737</th>
+      <td>충청북도 충주시 칠금동</td>
+      <td>626</td>
+      <td>626</td>
+      <td>0</td>
+      <td>삼일</td>
+      <td>143.5800</td>
+      <td>201910</td>
+      <td>21</td>
+      <td>16200</td>
+      <td>3</td>
+      <td>1996</td>
+      <td>금릉로 17</td>
+    </tr>
+  </tbody>
+</table>
+<p>1567 rows × 12 columns</p>
+</div>
+
+
+
+
+```python
+# 불리언 데이터 만들기
+bol = df['면적'] >= 130
+```
+
+
+```python
+# 불리언 데이터로 인덱싱하기
+df[bol]
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>지역</th>
+      <th>번지</th>
+      <th>본번</th>
+      <th>부번</th>
+      <th>아파트</th>
+      <th>면적</th>
+      <th>계약년월</th>
+      <th>계약일</th>
+      <th>가격</th>
+      <th>층</th>
+      <th>건축년도</th>
+      <th>도로명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>6</th>
+      <td>강원도 강릉시 교동</td>
+      <td>1982</td>
+      <td>1982</td>
+      <td>0</td>
+      <td>강릉교동롯데캐슬1단지</td>
+      <td>135.1727</td>
+      <td>201910</td>
+      <td>21</td>
+      <td>34300</td>
+      <td>9</td>
+      <td>2009</td>
+      <td>화부산로99번길 12</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>강원도 강릉시 남문동</td>
+      <td>183-2</td>
+      <td>183</td>
+      <td>2</td>
+      <td>삼익그린맨션</td>
+      <td>164.7540</td>
+      <td>201910</td>
+      <td>15</td>
+      <td>21000</td>
+      <td>12</td>
+      <td>1992</td>
+      <td>홍제로 7-17</td>
+    </tr>
+    <tr>
+      <th>334</th>
+      <td>강원도 속초시 금호동</td>
+      <td>629</td>
+      <td>629</td>
+      <td>0</td>
+      <td>보람레이크더하임</td>
+      <td>156.7600</td>
+      <td>201910</td>
+      <td>16</td>
+      <td>29500</td>
+      <td>1</td>
+      <td>2008</td>
+      <td>영랑호반길 115-13</td>
+    </tr>
+    <tr>
+      <th>433</th>
+      <td>강원도 원주시 개운동</td>
+      <td>01월 28일</td>
+      <td>28</td>
+      <td>1</td>
+      <td>원주힐스테이트</td>
+      <td>133.9912</td>
+      <td>201910</td>
+      <td>5</td>
+      <td>26000</td>
+      <td>16</td>
+      <td>2006</td>
+      <td>행구로 54</td>
+    </tr>
+    <tr>
+      <th>434</th>
+      <td>강원도 원주시 개운동</td>
+      <td>01월 28일</td>
+      <td>28</td>
+      <td>1</td>
+      <td>원주힐스테이트</td>
+      <td>137.4292</td>
+      <td>201910</td>
+      <td>31</td>
+      <td>24000</td>
+      <td>14</td>
+      <td>2006</td>
+      <td>행구로 54</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>42595</th>
+      <td>충청북도 충주시 문화동</td>
+      <td>2260</td>
+      <td>2260</td>
+      <td>0</td>
+      <td>럭키</td>
+      <td>156.7900</td>
+      <td>201910</td>
+      <td>21</td>
+      <td>15000</td>
+      <td>3</td>
+      <td>1993</td>
+      <td>중원대로 3379</td>
+    </tr>
+    <tr>
+      <th>42607</th>
+      <td>충청북도 충주시 안림동</td>
+      <td>1166</td>
+      <td>1166</td>
+      <td>0</td>
+      <td>엘리시아</td>
+      <td>136.1287</td>
+      <td>201910</td>
+      <td>19</td>
+      <td>18500</td>
+      <td>12</td>
+      <td>2007</td>
+      <td>국원초1길 48</td>
+    </tr>
+    <tr>
+      <th>42663</th>
+      <td>충청북도 충주시 연수동</td>
+      <td>1627</td>
+      <td>1627</td>
+      <td>0</td>
+      <td>연수힐스테이트</td>
+      <td>143.2109</td>
+      <td>201910</td>
+      <td>14</td>
+      <td>31500</td>
+      <td>13</td>
+      <td>2007</td>
+      <td>연수동산로 26</td>
+    </tr>
+    <tr>
+      <th>42736</th>
+      <td>충청북도 충주시 칠금동</td>
+      <td>626</td>
+      <td>626</td>
+      <td>0</td>
+      <td>삼일</td>
+      <td>143.5800</td>
+      <td>201910</td>
+      <td>20</td>
+      <td>18500</td>
+      <td>12</td>
+      <td>1996</td>
+      <td>금릉로 17</td>
+    </tr>
+    <tr>
+      <th>42737</th>
+      <td>충청북도 충주시 칠금동</td>
+      <td>626</td>
+      <td>626</td>
+      <td>0</td>
+      <td>삼일</td>
+      <td>143.5800</td>
+      <td>201910</td>
+      <td>21</td>
+      <td>16200</td>
+      <td>3</td>
+      <td>1996</td>
+      <td>금릉로 17</td>
+    </tr>
+  </tbody>
+</table>
+<p>1567 rows × 12 columns</p>
+</div>
+
+
+
+
+```python
+i = df[df['면적'] >= 130]
+```
+
+- 면적이 130 이상인 아파트의 가격만 출력
+
+
+```python
+# 1
+df[df.면적 >= 130][['가격']]
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>가격</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>6</th>
+      <td>34300</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>21000</td>
+    </tr>
+    <tr>
+      <th>334</th>
+      <td>29500</td>
+    </tr>
+    <tr>
+      <th>433</th>
+      <td>26000</td>
+    </tr>
+    <tr>
+      <th>434</th>
+      <td>24000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>42595</th>
+      <td>15000</td>
+    </tr>
+    <tr>
+      <th>42607</th>
+      <td>18500</td>
+    </tr>
+    <tr>
+      <th>42663</th>
+      <td>31500</td>
+    </tr>
+    <tr>
+      <th>42736</th>
+      <td>18500</td>
+    </tr>
+    <tr>
+      <th>42737</th>
+      <td>16200</td>
+    </tr>
+  </tbody>
+</table>
+<p>1567 rows × 1 columns</p>
+</div>
+
+
+
+
+```python
+# 2
+df.loc[df['면적']>130, ['가격']] # df.loc [행, 열]
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>가격</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>6</th>
+      <td>34300</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>21000</td>
+    </tr>
+    <tr>
+      <th>334</th>
+      <td>29500</td>
+    </tr>
+    <tr>
+      <th>433</th>
+      <td>26000</td>
+    </tr>
+    <tr>
+      <th>434</th>
+      <td>24000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>42595</th>
+      <td>15000</td>
+    </tr>
+    <tr>
+      <th>42607</th>
+      <td>18500</td>
+    </tr>
+    <tr>
+      <th>42663</th>
+      <td>31500</td>
+    </tr>
+    <tr>
+      <th>42736</th>
+      <td>18500</td>
+    </tr>
+    <tr>
+      <th>42737</th>
+      <td>16200</td>
+    </tr>
+  </tbody>
+</table>
+<p>1567 rows × 1 columns</p>
+</div>
+
+
+
+- 면적이 130 이상이고 가격이 1.5억 미만인 아파트의 가격만 출력
+
+
+```python
+df2 = df[df.면적 >= 130]
+```
+
+
+```python
+df2.loc[df2.가격 < 15000, ['가격']]
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>가격</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>862</th>
+      <td>14900</td>
+    </tr>
+    <tr>
+      <th>927</th>
+      <td>13800</td>
+    </tr>
+    <tr>
+      <th>16785</th>
+      <td>14700</td>
+    </tr>
+    <tr>
+      <th>36733</th>
+      <td>14700</td>
+    </tr>
+    <tr>
+      <th>37726</th>
+      <td>13700</td>
+    </tr>
+    <tr>
+      <th>38811</th>
+      <td>14600</td>
+    </tr>
+    <tr>
+      <th>39487</th>
+      <td>12000</td>
+    </tr>
+    <tr>
+      <th>40680</th>
+      <td>12500</td>
+    </tr>
+    <tr>
+      <th>41173</th>
+      <td>14000</td>
+    </tr>
+    <tr>
+      <th>41578</th>
+      <td>13000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+df.loc[(df['면적'] >=130) & (df['가격'] <15000), ['가격']]
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>가격</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>862</th>
+      <td>14900</td>
+    </tr>
+    <tr>
+      <th>927</th>
+      <td>13800</td>
+    </tr>
+    <tr>
+      <th>16785</th>
+      <td>14700</td>
+    </tr>
+    <tr>
+      <th>36733</th>
+      <td>14700</td>
+    </tr>
+    <tr>
+      <th>37726</th>
+      <td>13700</td>
+    </tr>
+    <tr>
+      <th>38811</th>
+      <td>14600</td>
+    </tr>
+    <tr>
+      <th>39487</th>
+      <td>12000</td>
+    </tr>
+    <tr>
+      <th>40680</th>
+      <td>12500</td>
+    </tr>
+    <tr>
+      <th>41173</th>
+      <td>14000</td>
+    </tr>
+    <tr>
+      <th>41578</th>
+      <td>13000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+- 위의 3가지 조건을 모두 만족하는 아파트들의 가격의 합계를 출력
+
+
+```python
+df.loc[(df['면적'] >=130) & (df['가격'] <15000), '가격'].sum()
+```
+
+
+
+
+    137900
+
+
+
+### 새로운 컬럼 추가하기
+- 단가 컬럼 만들기
+- 단가 = 가격/면적
+
+
+```python
+df['단가'] = df['가격'] / df['면적']
+```
+
+
+```python
+df
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>지역</th>
+      <th>번지</th>
+      <th>본번</th>
+      <th>부번</th>
+      <th>아파트</th>
+      <th>면적</th>
+      <th>계약년월</th>
+      <th>계약일</th>
+      <th>가격</th>
+      <th>층</th>
+      <th>건축년도</th>
+      <th>도로명</th>
+      <th>단가</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>강원도 강릉시 견소동</td>
+      <td>202</td>
+      <td>202</td>
+      <td>0</td>
+      <td>송정한신</td>
+      <td>59.800</td>
+      <td>201910</td>
+      <td>4</td>
+      <td>10900</td>
+      <td>5</td>
+      <td>1997</td>
+      <td>경강로2539번길 8</td>
+      <td>182.274247</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>강원도 강릉시 견소동</td>
+      <td>202</td>
+      <td>202</td>
+      <td>0</td>
+      <td>송정한신</td>
+      <td>116.175</td>
+      <td>201910</td>
+      <td>31</td>
+      <td>18500</td>
+      <td>10</td>
+      <td>1997</td>
+      <td>경강로2539번길 8</td>
+      <td>159.242522</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>강원도 강릉시 견소동</td>
+      <td>289</td>
+      <td>289</td>
+      <td>0</td>
+      <td>송정해변신도브래뉴아파트</td>
+      <td>84.990</td>
+      <td>201910</td>
+      <td>5</td>
+      <td>25000</td>
+      <td>6</td>
+      <td>2005</td>
+      <td>경강로2539번길 22</td>
+      <td>294.152253</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>강원도 강릉시 견소동</td>
+      <td>289</td>
+      <td>289</td>
+      <td>0</td>
+      <td>송정해변신도브래뉴아파트</td>
+      <td>84.990</td>
+      <td>201910</td>
+      <td>12</td>
+      <td>20600</td>
+      <td>3</td>
+      <td>2005</td>
+      <td>경강로2539번길 22</td>
+      <td>242.381457</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>강원도 강릉시 견소동</td>
+      <td>289</td>
+      <td>289</td>
+      <td>0</td>
+      <td>송정해변신도브래뉴아파트</td>
+      <td>84.990</td>
+      <td>201910</td>
+      <td>20</td>
+      <td>20500</td>
+      <td>1</td>
+      <td>2005</td>
+      <td>경강로2539번길 22</td>
+      <td>241.204848</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>42753</th>
+      <td>충청북도 충주시 호암동</td>
+      <td>547-6</td>
+      <td>547</td>
+      <td>6</td>
+      <td>호반현대</td>
+      <td>59.760</td>
+      <td>201910</td>
+      <td>29</td>
+      <td>7000</td>
+      <td>3</td>
+      <td>1994</td>
+      <td>신촌2길 28</td>
+      <td>117.135207</td>
+    </tr>
+    <tr>
+      <th>42754</th>
+      <td>충청북도 충주시 호암동</td>
+      <td>221-23</td>
+      <td>221</td>
+      <td>23</td>
+      <td>호암리버빌(1단지)</td>
+      <td>84.680</td>
+      <td>201910</td>
+      <td>5</td>
+      <td>12000</td>
+      <td>15</td>
+      <td>2002</td>
+      <td>원호암5길 32</td>
+      <td>141.709967</td>
+    </tr>
+    <tr>
+      <th>42755</th>
+      <td>충청북도 충주시 호암동</td>
+      <td>221-23</td>
+      <td>221</td>
+      <td>23</td>
+      <td>호암리버빌(1단지)</td>
+      <td>84.680</td>
+      <td>201910</td>
+      <td>15</td>
+      <td>11000</td>
+      <td>7</td>
+      <td>2002</td>
+      <td>원호암5길 32</td>
+      <td>129.900803</td>
+    </tr>
+    <tr>
+      <th>42756</th>
+      <td>충청북도 충주시 호암동</td>
+      <td>221-23</td>
+      <td>221</td>
+      <td>23</td>
+      <td>호암리버빌(1단지)</td>
+      <td>84.680</td>
+      <td>201910</td>
+      <td>17</td>
+      <td>12000</td>
+      <td>14</td>
+      <td>2002</td>
+      <td>원호암5길 32</td>
+      <td>141.709967</td>
+    </tr>
+    <tr>
+      <th>42757</th>
+      <td>충청북도 충주시 호암동</td>
+      <td>221-23</td>
+      <td>221</td>
+      <td>23</td>
+      <td>호암리버빌(1단지)</td>
+      <td>84.680</td>
+      <td>201910</td>
+      <td>26</td>
+      <td>11200</td>
+      <td>11</td>
+      <td>2002</td>
+      <td>원호암5길 32</td>
+      <td>132.262636</td>
+    </tr>
+  </tbody>
+</table>
+<p>42758 rows × 13 columns</p>
+</div>
+
+
+
+
+```python
+# 컬럼 이름 바꾸기
+# rename
+# inplace = True 바로 적용 
+df.rename(columns = {'단가' : '면적당가격'}, inplace=True)
+```
+
+
+```python
+df
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>지역</th>
+      <th>번지</th>
+      <th>본번</th>
+      <th>부번</th>
+      <th>아파트</th>
+      <th>면적</th>
+      <th>계약년월</th>
+      <th>계약일</th>
+      <th>가격</th>
+      <th>층</th>
+      <th>건축년도</th>
+      <th>도로명</th>
+      <th>면적당가격</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>강원도 강릉시 견소동</td>
+      <td>202</td>
+      <td>202</td>
+      <td>0</td>
+      <td>송정한신</td>
+      <td>59.800</td>
+      <td>201910</td>
+      <td>4</td>
+      <td>10900</td>
+      <td>5</td>
+      <td>1997</td>
+      <td>경강로2539번길 8</td>
+      <td>182.274247</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>강원도 강릉시 견소동</td>
+      <td>202</td>
+      <td>202</td>
+      <td>0</td>
+      <td>송정한신</td>
+      <td>116.175</td>
+      <td>201910</td>
+      <td>31</td>
+      <td>18500</td>
+      <td>10</td>
+      <td>1997</td>
+      <td>경강로2539번길 8</td>
+      <td>159.242522</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>강원도 강릉시 견소동</td>
+      <td>289</td>
+      <td>289</td>
+      <td>0</td>
+      <td>송정해변신도브래뉴아파트</td>
+      <td>84.990</td>
+      <td>201910</td>
+      <td>5</td>
+      <td>25000</td>
+      <td>6</td>
+      <td>2005</td>
+      <td>경강로2539번길 22</td>
+      <td>294.152253</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>강원도 강릉시 견소동</td>
+      <td>289</td>
+      <td>289</td>
+      <td>0</td>
+      <td>송정해변신도브래뉴아파트</td>
+      <td>84.990</td>
+      <td>201910</td>
+      <td>12</td>
+      <td>20600</td>
+      <td>3</td>
+      <td>2005</td>
+      <td>경강로2539번길 22</td>
+      <td>242.381457</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>강원도 강릉시 견소동</td>
+      <td>289</td>
+      <td>289</td>
+      <td>0</td>
+      <td>송정해변신도브래뉴아파트</td>
+      <td>84.990</td>
+      <td>201910</td>
+      <td>20</td>
+      <td>20500</td>
+      <td>1</td>
+      <td>2005</td>
+      <td>경강로2539번길 22</td>
+      <td>241.204848</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>42753</th>
+      <td>충청북도 충주시 호암동</td>
+      <td>547-6</td>
+      <td>547</td>
+      <td>6</td>
+      <td>호반현대</td>
+      <td>59.760</td>
+      <td>201910</td>
+      <td>29</td>
+      <td>7000</td>
+      <td>3</td>
+      <td>1994</td>
+      <td>신촌2길 28</td>
+      <td>117.135207</td>
+    </tr>
+    <tr>
+      <th>42754</th>
+      <td>충청북도 충주시 호암동</td>
+      <td>221-23</td>
+      <td>221</td>
+      <td>23</td>
+      <td>호암리버빌(1단지)</td>
+      <td>84.680</td>
+      <td>201910</td>
+      <td>5</td>
+      <td>12000</td>
+      <td>15</td>
+      <td>2002</td>
+      <td>원호암5길 32</td>
+      <td>141.709967</td>
+    </tr>
+    <tr>
+      <th>42755</th>
+      <td>충청북도 충주시 호암동</td>
+      <td>221-23</td>
+      <td>221</td>
+      <td>23</td>
+      <td>호암리버빌(1단지)</td>
+      <td>84.680</td>
+      <td>201910</td>
+      <td>15</td>
+      <td>11000</td>
+      <td>7</td>
+      <td>2002</td>
+      <td>원호암5길 32</td>
+      <td>129.900803</td>
+    </tr>
+    <tr>
+      <th>42756</th>
+      <td>충청북도 충주시 호암동</td>
+      <td>221-23</td>
+      <td>221</td>
+      <td>23</td>
+      <td>호암리버빌(1단지)</td>
+      <td>84.680</td>
+      <td>201910</td>
+      <td>17</td>
+      <td>12000</td>
+      <td>14</td>
+      <td>2002</td>
+      <td>원호암5길 32</td>
+      <td>141.709967</td>
+    </tr>
+    <tr>
+      <th>42757</th>
+      <td>충청북도 충주시 호암동</td>
+      <td>221-23</td>
+      <td>221</td>
+      <td>23</td>
+      <td>호암리버빌(1단지)</td>
+      <td>84.680</td>
+      <td>201910</td>
+      <td>26</td>
+      <td>11200</td>
+      <td>11</td>
+      <td>2002</td>
+      <td>원호암5길 32</td>
+      <td>132.262636</td>
+    </tr>
+  </tbody>
+</table>
+<p>42758 rows × 13 columns</p>
+</div>
+
+
