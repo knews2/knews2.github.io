@@ -20,7 +20,7 @@ title                    : "Yuseon's Blog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Yuseon Kim"
-description              : "Will I become a programmer? The answer is in this blog."
+description              : "Will I become a Data Analyst? The answer is in this blog."
 url                      : "https://knews2.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "knews2/knews2.github.io"
