@@ -10,21 +10,3 @@ main:
     url: /Java/
   - title: "All Posts"
     url: /categories/  
-  
-docs:
-  - title: "Machine-Learning"
-    children:
-      - title: "Python"
-        url: /ML/
-      - title: "Data Analyst"
-        url: /ML/
-  - title: "Kaggle"
-    children:
-      - title: "Competition"
-      url: /Kaggle/
-  - title: "Java"
-    children:
-      - title: "Java"
-        url: /Java/
-      - title: "etc."
-        url: /Java/
