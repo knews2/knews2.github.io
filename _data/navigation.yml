@@ -10,3 +10,13 @@ main:
     url: /Java/
   - title: "All Posts"
     url: /categories/  
+
+docs:
+  - title: "Machine-Learning"
+    url: /ML/
+  - title: "Kaggle"
+    url: /Kaggle/
+  - title: "Java"
+    url: /Java/
+  - title: "All Posts"
+    url: /categories/  
