@@ -1,0 +1,310 @@
+### 변수 (Variable)
+
+변수라는 것은 임시로 혹은 영구적으로 값을 기억해두기 위한 공간을 의미한다.
+
+### 자료형
+
+ 숫자, 문자열 등 자료 형태로 사용하는 모든 것
+
+
+```python
+1+3
+```
+
+
+
+
+    4
+
+
+
+
+```python
+num = 1+6
+```
+
+
+```python
+print(num)
+```
+
+    7
+    
+
+
+```python
+"123" #문자
+```
+
+
+
+
+    '123'
+
+
+
+
+```python
+123 #숫자
+```
+
+
+
+
+    123
+
+
+
+
+```python
+number = 10
+Number = 20
+print("number: ", number)
+print("Number: ", Number)
+```
+
+    number:  10
+    Number:  20
+    
+
+
+```python
+false = 10
+```
+
+
+```python
+false
+```
+
+
+
+
+    10
+
+
+
+
+```python
+a = 10
+b = 15
+print(a)
+print(b)
+```
+
+    10
+    15
+    
+
+
+```python
+a,b = 10,15
+print(a)
+print(b)
+```
+
+    10
+    15
+    
+
+
+```python
+str1 = "python"
+str2 = "python"
+print(str1)
+print(str2)
+```
+
+    python
+    python
+    
+
+
+```python
+str1, str2 = "python", "python"
+print(str1, str2)
+```
+
+    python python
+    
+
+
+```python
+str1 = str2 = "python"
+print(str1, str2)
+```
+
+    python python
+    
+
+
+```python
+str1 = str2 = "python"
+print(str1)
+print(str2)
+```
+
+    python
+    python
+    
+
+
+```python
+x = 100
+y = 200
+sum = x + y
+print(sum)
+```
+
+    300
+    
+
+
+```python
+x, y = 100, 200
+sum = x + y
+print(sum)
+```
+
+    300
+    
+
+
+```python
+sum
+```
+
+
+
+
+    300
+
+
+
+
+```python
+x = "she\'s gone'"
+```
+
+
+```python
+print(x)
+```
+
+    she's gone'
+    
+
+
+```python
+x = "she's gone"
+y = "she\'s gone"
+
+print(x)
+print(y)
+```
+
+    she's gone
+    she's gone
+    
+
+
+```python
+x = 'he said that "she is gone"'
+y = "he said that \"she is gone\""
+print(x)
+print(y)
+```
+
+    he said that "she is gone"
+    he said that "she is gone"
+    
+
+
+```python
+s = """2
+0
+2
+1"""
+print(s)
+```
+
+    2
+    0
+    2
+    1
+    
+
+
+```python
+s = "여러줄로 구성된 \n문자열을 하나로 대입할 때"
+print(s)
+```
+
+    여러줄로 구성된 
+    문자열을 하나로 대입할 때
+    
+
+
+```python
+s = "2\n0\n2\n1"
+print(s)
+```
+
+    2
+    0
+    2
+    1
+    
+
+
+```python
+s = "2\t0\t2\t1"
+print(s)
+```
+
+    2	0	2	1
+    
+
+
+```python
+title = "파이썬은 재밌다. !!!"
+```
+
+- 인덱싱(indexing): 한 개 / 가리키는 것
+
+
+```python
+print(title[0]) 
+```
+
+    파
+    
+
+
+```python
+print(title[0:1])
+print(title[5:8])
+print(title[10:])
+print(title[:])
+
+#슬라이싱(slicing): 여러 개 / 자르는 것
+```
+
+    파
+    재밌다
+    !!!
+    파이썬은 재밌다. !!!
+    
+
+
+```python
+s = "2020년 5월 29일의 날씨는 맑음입니다."
+
+print("날짜 :", s[:12])
+print("날씨 :", s[-6:-4])
+```
+
+    날짜 : 2020년 5월 29일
+    날씨 : 맑음
+    날씨 : 맑음
+    
