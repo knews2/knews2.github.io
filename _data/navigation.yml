@@ -9,33 +9,24 @@ main:
   - title: "Java"
     url: /Java/
   - title: "All Posts"
-    url: /categories/
-#   - title: "About"
-#     url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
-  
+    url: /categories/  
   
 docs:
   - title: "Machine-Learning"
     children:
       - title: "Python"
-        url: /docs/ML/
+        url: /ML/
       - title: "Data Analyst"
-        url: /docs/ML/
+        url: /ML/
   - title: "Kaggle"
     children:
       - title: "Competition"
-        url: /docs/Kaggle/
+        url: /Kaggle/
       - title: "etc."
-      url: /docs/Kaggle/
+      url: /Kaggle/
   - title: "Java"
     children:
       - title: "Java"
-        url: /docs/Java/
+        url: /Java/
       - title: "etc."
-        url: /docs/Java/
+        url: /Java/
