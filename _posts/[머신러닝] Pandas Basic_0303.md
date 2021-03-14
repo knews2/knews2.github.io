@@ -1,0 +1,286 @@
+```python
+import pandas as pd
+df = pd.read_csv('apt.csv', encoding="cp949")
+```
+
+
+```python
+df.head()
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>지역</th>
+      <th>번지</th>
+      <th>본번</th>
+      <th>부번</th>
+      <th>아파트</th>
+      <th>면적</th>
+      <th>계약년월</th>
+      <th>계약일</th>
+      <th>가격</th>
+      <th>층</th>
+      <th>건축년도</th>
+      <th>도로명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>강원도 강릉시 견소동</td>
+      <td>202</td>
+      <td>202</td>
+      <td>0</td>
+      <td>송정한신</td>
+      <td>59.800</td>
+      <td>201910</td>
+      <td>4</td>
+      <td>10900</td>
+      <td>5</td>
+      <td>1997</td>
+      <td>경강로2539번길 8</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>강원도 강릉시 견소동</td>
+      <td>202</td>
+      <td>202</td>
+      <td>0</td>
+      <td>송정한신</td>
+      <td>116.175</td>
+      <td>201910</td>
+      <td>31</td>
+      <td>18500</td>
+      <td>10</td>
+      <td>1997</td>
+      <td>경강로2539번길 8</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>강원도 강릉시 견소동</td>
+      <td>289</td>
+      <td>289</td>
+      <td>0</td>
+      <td>송정해변신도브래뉴아파트</td>
+      <td>84.990</td>
+      <td>201910</td>
+      <td>5</td>
+      <td>25000</td>
+      <td>6</td>
+      <td>2005</td>
+      <td>경강로2539번길 22</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>강원도 강릉시 견소동</td>
+      <td>289</td>
+      <td>289</td>
+      <td>0</td>
+      <td>송정해변신도브래뉴아파트</td>
+      <td>84.990</td>
+      <td>201910</td>
+      <td>12</td>
+      <td>20600</td>
+      <td>3</td>
+      <td>2005</td>
+      <td>경강로2539번길 22</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>강원도 강릉시 견소동</td>
+      <td>289</td>
+      <td>289</td>
+      <td>0</td>
+      <td>송정해변신도브래뉴아파트</td>
+      <td>84.990</td>
+      <td>201910</td>
+      <td>20</td>
+      <td>20500</td>
+      <td>1</td>
+      <td>2005</td>
+      <td>경강로2539번길 22</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+# 컬럼명 전체 출력
+df.columns
+```
+
+
+
+
+    Index(['지역', '번지', '본번', '부번', '아파트', '면적', '계약년월', '계약일', '가격', '층', '건축년도',
+           '도로명'],
+          dtype='object')
+
+
+
+
+```python
+df[0:0]
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>지역</th>
+      <th>번지</th>
+      <th>본번</th>
+      <th>부번</th>
+      <th>아파트</th>
+      <th>면적</th>
+      <th>계약년월</th>
+      <th>계약일</th>
+      <th>가격</th>
+      <th>층</th>
+      <th>건축년도</th>
+      <th>도로명</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+# index 를 직접 지정한 것이 아니라면 '범위값'이 출력된다. 
+df.index
+```
+
+
+
+
+    RangeIndex(start=0, stop=42758, step=1)
+
+
+
+
+```python
+import numpy as np
+```
+
+
+```python
+data = pd.DataFrame(np.arange(10).reshape(2,5),
+            index=['가','나'])
+```
+
+
+```python
+data.index
+```
+
+
+
+
+    Index(['가', '나'], dtype='object')
+
+
+
+### 열 전체 자료 출력하기
+
+
+```python
+# 지역 열의 전체 자료 출력
+```
+
+
+```python
+# 시리즈로 출력하기
+# 시리즈: 컬럼 안에 있는 값을 직접 사용하려고 할 때
+# df['지역']
+```
+
+
+```python
+# test = df['지역']
+```
+
+
+```python
+# 지역 안에 있는 값을 하나씩 출력하기
+# for word in test:
+  #  print(word)
+```
+
+
+```python
+# 시리즈로 출력하기 - 인덱서 사용하기
+# 기존 df 와 같은 자료주소, 값 변경시 기존 데이터 값도 바뀜'
+# == 주소 값을 가지고 간다. 값을 변화시키면 기존의 데이터에서 값의 변화가 일어난다. 
+
+#df.loc[:, '지역']
+```
+
+
+```python
+# 여러가지 컬럼을 불러올 때는 리스로 묶어서 입력해주면 된다.
+
+#df.loc[ :, ['지역', '층', '아파트']]
+```
+
+
+```python
+#df.iloc[:, 0:1]
+```
+
+
+```python
+# 데이터 프레임으로 출력하기
+# 데이터 프레임
+# - 학습 시킬 문제 데이터 (머신러닝 문제는 기본적으로 2차원 이상이다.)
+# - 데이터를 합칠 때 (concat, merge 함수)
+
+# df[['지역']]
+```
+
+
+```python
+
+```
