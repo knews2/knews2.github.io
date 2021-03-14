@@ -21,8 +21,6 @@ docs:
   - title: "Kaggle"
     children:
       - title: "Competition"
-        url: /Kaggle/
-      - title: "etc."
       url: /Kaggle/
   - title: "Java"
     children:
