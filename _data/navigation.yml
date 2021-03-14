@@ -1,12 +1,12 @@
 # main links
 main:
-#   - title: "Quick-Start Guide"
-#   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  - title: "Quick-Start Guide"
+    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "Machine-Learning"
     url: /ML/
   - title: "Kaggle"
     url: /Kaggle/
-  - title: "Miscellaneous"
+  - title: "Java"
     url: /Miscellaneous/
   - title: "All Posts"
     url: /categories/
