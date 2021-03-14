@@ -24,18 +24,18 @@ main:
     - title: "Machine-Learning"
       children:
         - title: "Python"
-          url: /ML/
+          url: /docs/ML/
         - title: "Data Analyst"
-          url: /ML/
+          url: /docs/ML/
     - title: "Kaggle"
         children:
           - title: "Competition"
-            url: /Kaggle/
+            url: /docs/Kaggle/
           - title: "etc."
-            url: /Kaggle/
+            url: /docs/Kaggle/
     - title: "Java"
         children:
           - title: "Java"
-            url: /Java/
+            url: /docs/Java/
           - title: "etc."
-            url: /Java/
+            url: /docs/Java/
