@@ -20,22 +20,22 @@ main:
   #   url: /sitemap/
   
   
-  docs:
-    - title: "Machine-Learning"
-      children:
-        - title: "Python"
-          url: /docs/ML/
-        - title: "Data Analyst"
-          url: /docs/ML/
-    - title: "Kaggle"
-        children:
-          - title: "Competition"
-            url: /docs/Kaggle/
-          - title: "etc."
-            url: /docs/Kaggle/
-    - title: "Java"
-        children:
-          - title: "Java"
-            url: /docs/Java/
-          - title: "etc."
-            url: /docs/Java/
+docs:
+  - title: "Machine-Learning"
+    children:
+      - title: "Python"
+        url: /docs/ML/
+      - title: "Data Analyst"
+        url: /docs/ML/
+  - title: "Kaggle"
+    children:
+      - title: "Competition"
+        url: /docs/Kaggle/
+      - title: "etc."
+      url: /docs/Kaggle/
+  - title: "Java"
+    children:
+      - title: "Java"
+        url: /docs/Java/
+      - title: "etc."
+        url: /docs/Java/
