@@ -1,0 +1,94 @@
+### 함수
+
+
+```python
+def plus(a, b, c):
+    result = a + b + c
+    return result
+
+r = plus(1, 2, 5)
+r
+```
+
+
+
+
+    8
+
+
+
+
+```python
+def minus(a,b):     #매개변수(parameter) 
+    result = a - b
+    return result
+
+m = minus(10,20)    #인수(arguments)
+m
+```
+
+
+
+
+    -10
+
+
+
+
+```python
+x = int(input("정수 입력 >> "))
+y = int(input("정수 입력 >> "))
+
+minus(x, y)
+```
+
+    정수 입력 >> 5
+    정수 입력 >> 2
+    
+
+
+
+
+    3
+
+
+
+
+```python
+num = int(input("정수 입력 >> "))
+
+for i in range(1, num+1):
+    if num%i == 0:
+        print(i, end = " ")
+```
+
+
+```python
+num = int(input("정수 입력 >> "))
+
+def 약수(num):
+    
+    result = ""
+    
+    for i in range(1, num+1):
+        if num%i == 0:
+            result += str(i)+" "
+            
+            
+    return result
+```
+
+    정수 입력 >> 32
+    
+
+
+```python
+약수(num)
+```
+
+
+
+
+    '1 2 4 8 16 32 '
+
+
