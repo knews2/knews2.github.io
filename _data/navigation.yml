@@ -3,7 +3,11 @@ main:
 #   - title: "Quick-Start Guide"
 #     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "Machine-Learning"
-    url: /ML/
+    children:
+    - title: "Basic"
+      url: /ML/
+    - title: "Machine-Learning"
+      url: /ML/
   - title: "Kaggle"
     url: /Kaggle/
   - title: "Java"
