@@ -5,7 +5,7 @@ main:
   - title: "Machine-Learning"
     children:
     - title: "Basic"
-      url: /ML/
+      url: /Basic/
     - title: "Machine-Learning"
       url: /ML/
   - title: "Kaggle"
