@@ -1,7 +1,7 @@
-# tag-archive.md
 ---
-title: "Posts by Tag"
-permalink: /tags/
-layout: tags
-author_profile: true
+title: "Kaggle"
+layout: category-kaggle
+permalink: /Kaggle/
+author_profile: True
 ---
+
