@@ -2,12 +2,14 @@
 main:
 #   - title: "Quick-Start Guide"
 #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  - title: "Archive"
-  url: /year-archive/
-  - title: "tag"
-  url: /tags/
-  - title: "Category"
-  url: /categories/
+  - title: "Machine-Learning"
+    url: /ML/
+  - title: "Kaggle"
+    url: /Kaggle/
+  - title: "Miscellaneous"
+    url: /Miscellaneous/
+  - title: "All Posts"
+    url: /categories/
 #   - title: "About"
 #     url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
