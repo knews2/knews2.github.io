@@ -1,0 +1,1833 @@
+### Pandas library (PANel DAta)
+
+- Series class: 인덱스 + 값, 1차원
+- Dataframe class: 표, 2차원
+
+### DataFrame
+
+df = pd.DataFrame()
+
+
+```python
+# key 값은 그대로, value 값은 list 형태로
+data ={
+    "2015" : [9904312, 3448737, 2890451, 2466052],
+    "2010" : [9631482, 3393191, 2632035, 2431774]
+}
+df = pd.DataFrame(data)
+
+df
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>2015</th>
+      <th>2010</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>9904312</td>
+      <td>9631482</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3448737</td>
+      <td>3393191</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2890451</td>
+      <td>2632035</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2466052</td>
+      <td>2431774</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+df.index = ['서울', '부산', '인천','대구']
+
+df
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>2015</th>
+      <th>2010</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>서울</th>
+      <td>9904312</td>
+      <td>9631482</td>
+    </tr>
+    <tr>
+      <th>부산</th>
+      <td>3448737</td>
+      <td>3393191</td>
+    </tr>
+    <tr>
+      <th>인천</th>
+      <td>2890451</td>
+      <td>2632035</td>
+    </tr>
+    <tr>
+      <th>대구</th>
+      <td>2466052</td>
+      <td>2431774</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+data = [
+    [9904312, 3448737, 2890451, 2466052],
+    [9631482, 3393191, 2632035, 2431774]
+] # index 2개, column 4개
+
+ind = ["2015", "2010"]
+col = ['서울', '부산', '인천','대구']
+
+df3 = pd.DataFrame(data, index = ind, columns = col)
+```
+
+
+```python
+df3
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>서울</th>
+      <th>부산</th>
+      <th>인천</th>
+      <th>대구</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2015</th>
+      <td>9904312</td>
+      <td>3448737</td>
+      <td>2890451</td>
+      <td>2466052</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>9631482</td>
+      <td>3393191</td>
+      <td>2632035</td>
+      <td>2431774</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+data ={
+    "2015" : [9904312, 3448737, 2890451, 2466052],
+    "2010" : [9631482, 3393191, 2632035, 2431774]
+}
+
+ind = ['서울', '부산', '인천','대구'] 
+
+df2 = pd.DataFrame(data, index = ind)
+```
+
+
+```python
+df2
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>2015</th>
+      <th>2010</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>서울</th>
+      <td>9904312</td>
+      <td>9631482</td>
+    </tr>
+    <tr>
+      <th>부산</th>
+      <td>3448737</td>
+      <td>3393191</td>
+    </tr>
+    <tr>
+      <th>인천</th>
+      <td>2890451</td>
+      <td>2632035</td>
+    </tr>
+    <tr>
+      <th>대구</th>
+      <td>2466052</td>
+      <td>2431774</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+data = [[9904312, 3448737], 
+        [2890451, 2466052], 
+        [9631482, 3393191], 
+        [2632035, 2431774]] # index 4개 column 2개
+
+ind = ['서울', '부산', '인천','대구'] 
+col = ["2015", "2010"]
+
+df4 = pd.DataFrame(data, index = ind, columns = col)
+```
+
+
+```python
+df4
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>2015</th>
+      <th>2010</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>서울</th>
+      <td>9904312</td>
+      <td>3448737</td>
+    </tr>
+    <tr>
+      <th>부산</th>
+      <td>2890451</td>
+      <td>2466052</td>
+    </tr>
+    <tr>
+      <th>인천</th>
+      <td>9631482</td>
+      <td>3393191</td>
+    </tr>
+    <tr>
+      <th>대구</th>
+      <td>2632035</td>
+      <td>2431774</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+df3
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>서울</th>
+      <th>부산</th>
+      <th>인천</th>
+      <th>대구</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2015</th>
+      <td>9904312</td>
+      <td>3448737</td>
+      <td>2890451</td>
+      <td>2466052</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>9631482</td>
+      <td>3393191</td>
+      <td>2632035</td>
+      <td>2431774</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+# 행, 열의 수가 바뀜.
+
+df3.T
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>2015</th>
+      <th>2010</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>서울</th>
+      <td>9904312</td>
+      <td>9631482</td>
+    </tr>
+    <tr>
+      <th>부산</th>
+      <td>3448737</td>
+      <td>3393191</td>
+    </tr>
+    <tr>
+      <th>인천</th>
+      <td>2890451</td>
+      <td>2632035</td>
+    </tr>
+    <tr>
+      <th>대구</th>
+      <td>2466052</td>
+      <td>2431774</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+df.values
+```
+
+
+
+
+    array([[9904312, 9631482],
+           [3448737, 3393191],
+           [2890451, 2632035],
+           [2466052, 2431774]], dtype=int64)
+
+
+
+
+```python
+df.index
+```
+
+
+
+
+    Index(['서울', '부산', '인천', '대구'], dtype='object')
+
+
+
+
+```python
+df.columns
+```
+
+
+
+
+    Index(['2015', '2010'], dtype='object')
+
+
+
+
+```python
+# Series 형태: DataFrame 매 열은 Series 형태로 구성되어 있다.
+
+df["2015"] 
+```
+
+
+
+
+    서울    9904312
+    부산    3448737
+    인천    2890451
+    대구    2466052
+    Name: 2015, dtype: int64
+
+
+
+
+```python
+df[["2015"]] # 2차원으로 indexing 할 경우, DataFrame 형태로 보임.
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>2015</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>서울</th>
+      <td>9904312</td>
+    </tr>
+    <tr>
+      <th>부산</th>
+      <td>3448737</td>
+    </tr>
+    <tr>
+      <th>인천</th>
+      <td>2890451</td>
+    </tr>
+    <tr>
+      <th>대구</th>
+      <td>2466052</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+df[["2010","2015"]]
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>2010</th>
+      <th>2015</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>서울</th>
+      <td>9631482</td>
+      <td>9904312</td>
+    </tr>
+    <tr>
+      <th>부산</th>
+      <td>3393191</td>
+      <td>3448737</td>
+    </tr>
+    <tr>
+      <th>인천</th>
+      <td>2632035</td>
+      <td>2890451</td>
+    </tr>
+    <tr>
+      <th>대구</th>
+      <td>2431774</td>
+      <td>2466052</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+df[["2015","2010"]]
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>2015</th>
+      <th>2010</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>서울</th>
+      <td>9904312</td>
+      <td>9631482</td>
+    </tr>
+    <tr>
+      <th>부산</th>
+      <td>3448737</td>
+      <td>3393191</td>
+    </tr>
+    <tr>
+      <th>인천</th>
+      <td>2890451</td>
+      <td>2632035</td>
+    </tr>
+    <tr>
+      <th>대구</th>
+      <td>2466052</td>
+      <td>2431774</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+df[0:1]
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>2015</th>
+      <th>2010</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>서울</th>
+      <td>9904312</td>
+      <td>9631482</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+df["서울":"부산"]
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>2015</th>
+      <th>2010</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>서울</th>
+      <td>9904312</td>
+      <td>9631482</td>
+    </tr>
+    <tr>
+      <th>부산</th>
+      <td>3448737</td>
+      <td>3393191</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+### loc[], iloc[] 인덱서
+
+loc[행, 열]
+
+
+```python
+# df.loc : index name & column name
+
+df.loc["서울":"부산","2015":"2010"] 
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>2015</th>
+      <th>2010</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>서울</th>
+      <td>9904312</td>
+      <td>9631482</td>
+    </tr>
+    <tr>
+      <th>부산</th>
+      <td>3448737</td>
+      <td>3393191</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+df4
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>2015</th>
+      <th>2010</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>서울</th>
+      <td>9904312</td>
+      <td>3448737</td>
+    </tr>
+    <tr>
+      <th>부산</th>
+      <td>2890451</td>
+      <td>2466052</td>
+    </tr>
+    <tr>
+      <th>인천</th>
+      <td>9631482</td>
+      <td>3393191</td>
+    </tr>
+    <tr>
+      <th>대구</th>
+      <td>2632035</td>
+      <td>2431774</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+# df.iloc : index number 
+# column == 2 & index == 0 의 값
+
+df4.iloc[2, 0]
+```
+
+
+
+
+    9631482
+
+
+
+
+```python
+df4.loc["인천","2015"]
+```
+
+
+
+
+    9631482
+
+
+
+
+```python
+df4['2010'] >= 2500000
+```
+
+
+
+
+    서울     True
+    부산    False
+    인천     True
+    대구    False
+    Name: 2010, dtype: bool
+
+
+
+
+```python
+df4
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>2015</th>
+      <th>2010</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>서울</th>
+      <td>9904312</td>
+      <td>3448737</td>
+    </tr>
+    <tr>
+      <th>부산</th>
+      <td>2890451</td>
+      <td>2466052</td>
+    </tr>
+    <tr>
+      <th>인천</th>
+      <td>9631482</td>
+      <td>3393191</td>
+    </tr>
+    <tr>
+      <th>대구</th>
+      <td>2632035</td>
+      <td>2431774</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+df4[df4['2010'] >= 2500000]
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>2015</th>
+      <th>2010</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>서울</th>
+      <td>9904312</td>
+      <td>3448737</td>
+    </tr>
+    <tr>
+      <th>인천</th>
+      <td>9631482</td>
+      <td>3393191</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+# index_col = "도시"
+# 도시라는 column 을 index 로 사용하겠다.
+
+population_number = pd.read_csv("population_number.csv",
+                                index_col = "도시", 
+                                encoding = "euc-kr")
+```
+
+
+```python
+population_number # index == 4 , column == 5
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>지역</th>
+      <th>2015</th>
+      <th>2010</th>
+      <th>2005</th>
+      <th>2000</th>
+    </tr>
+    <tr>
+      <th>도시</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>서울</th>
+      <td>수도권</td>
+      <td>9904312</td>
+      <td>9631482.0</td>
+      <td>9762546.0</td>
+      <td>9853972</td>
+    </tr>
+    <tr>
+      <th>부산</th>
+      <td>경상권</td>
+      <td>3448737</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3655437</td>
+    </tr>
+    <tr>
+      <th>인천</th>
+      <td>수도권</td>
+      <td>2890451</td>
+      <td>2632035.0</td>
+      <td>NaN</td>
+      <td>2466338</td>
+    </tr>
+    <tr>
+      <th>대구</th>
+      <td>경상권</td>
+      <td>2466052</td>
+      <td>2431774.0</td>
+      <td>2456016.0</td>
+      <td>2473990</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+population_number.index
+```
+
+
+
+
+    Index(['서울', '부산', '인천', '대구'], dtype='object', name='도시')
+
+
+
+
+```python
+population_number.columns
+```
+
+
+
+
+    Index(['지역', '2015', '2010', '2005', '2000'], dtype='object')
+
+
+
+
+```python
+# valune_counts(): values 값이 나온 횟수를 알 수 있다.
+
+population_number.value_counts('2015')
+```
+
+
+
+
+    2015
+    9904312    1
+    3448737    1
+    2890451    1
+    2466052    1
+    dtype: int64
+
+
+
+
+```python
+# population_number['2015'] column 에 대한 value 값의 개수
+
+population_number['2015'].value_counts()
+```
+
+
+
+
+    2466052    1
+    2890451    1
+    3448737    1
+    9904312    1
+    Name: 2015, dtype: int64
+
+
+
+
+```python
+population_number['지역'].value_counts()
+```
+
+
+
+
+    경상권    2
+    수도권    2
+    Name: 지역, dtype: int64
+
+
+
+
+```python
+# sort_index 함수 : index 값을 기준으로 정렬
+# sort_values 함수 : data 값을 기준으로 정렬
+```
+
+
+```python
+population_number["2010"].sort_values()
+```
+
+
+
+
+    도시
+    대구    2431774.0
+    인천    2632035.0
+    서울    9631482.0
+    부산          NaN
+    Name: 2010, dtype: float64
+
+
+
+
+```python
+# 내림차순 : ascending = False
+population_number["2010"].sort_values(ascending = False)
+```
+
+
+
+
+    도시
+    서울    9631482.0
+    인천    2632035.0
+    대구    2431774.0
+    부산          NaN
+    Name: 2010, dtype: float64
+
+
+
+
+```python
+population_number.sort_index()
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>지역</th>
+      <th>2015</th>
+      <th>2010</th>
+      <th>2005</th>
+      <th>2000</th>
+    </tr>
+    <tr>
+      <th>도시</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>대구</th>
+      <td>경상권</td>
+      <td>2466052</td>
+      <td>2431774.0</td>
+      <td>2456016.0</td>
+      <td>2473990</td>
+    </tr>
+    <tr>
+      <th>부산</th>
+      <td>경상권</td>
+      <td>3448737</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>3655437</td>
+    </tr>
+    <tr>
+      <th>서울</th>
+      <td>수도권</td>
+      <td>9904312</td>
+      <td>9631482.0</td>
+      <td>9762546.0</td>
+      <td>9853972</td>
+    </tr>
+    <tr>
+      <th>인천</th>
+      <td>수도권</td>
+      <td>2890451</td>
+      <td>2632035.0</td>
+      <td>NaN</td>
+      <td>2466338</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+score = pd.read_csv("score.csv", encoding = "euc-kr")
+
+score
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>과목</th>
+      <th>1반</th>
+      <th>2반</th>
+      <th>3반</th>
+      <th>4반</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>수학</td>
+      <td>45</td>
+      <td>44</td>
+      <td>73</td>
+      <td>39</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>영어</td>
+      <td>76</td>
+      <td>92</td>
+      <td>45</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>국어</td>
+      <td>47</td>
+      <td>92</td>
+      <td>45</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>사회</td>
+      <td>92</td>
+      <td>81</td>
+      <td>85</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>과학</td>
+      <td>11</td>
+      <td>79</td>
+      <td>47</td>
+      <td>26</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+score = pd.read_csv("score.csv", index_col = "과목", encoding = "euc-kr")
+
+score
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>1반</th>
+      <th>2반</th>
+      <th>3반</th>
+      <th>4반</th>
+    </tr>
+    <tr>
+      <th>과목</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>수학</th>
+      <td>45</td>
+      <td>44</td>
+      <td>73</td>
+      <td>39</td>
+    </tr>
+    <tr>
+      <th>영어</th>
+      <td>76</td>
+      <td>92</td>
+      <td>45</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <th>국어</th>
+      <td>47</td>
+      <td>92</td>
+      <td>45</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <th>사회</th>
+      <td>92</td>
+      <td>81</td>
+      <td>85</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>과학</th>
+      <td>11</td>
+      <td>79</td>
+      <td>47</td>
+      <td>26</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+score2 = score.T
+score2.sum()
+```
+
+
+
+
+    과목
+    수학    201
+    영어    282
+    국어    253
+    사회    298
+    과학    163
+    dtype: int64
+
+
+
+
+```python
+score['합계'] = score.sum(axis = 1)
+```
+
+
+```python
+score['합계']
+```
+
+
+
+
+    과목
+    수학    201
+    영어    282
+    국어    253
+    사회    298
+    과학    163
+    Name: 합계, dtype: int64
+
+
+
+
+```python
+score2.sum().sort_values(ascending = False)
+```
+
+
+
+
+    과목
+    사회    298
+    영어    282
+    국어    253
+    수학    201
+    과학    163
+    dtype: int64
+
+
+
+
+```python
+f = score2.sum()
+```
+
+
+```python
+score['합계2'] = f
+```
+
+
+```python
+score
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>1반</th>
+      <th>2반</th>
+      <th>3반</th>
+      <th>4반</th>
+      <th>합계</th>
+      <th>합계2</th>
+    </tr>
+    <tr>
+      <th>과목</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>수학</th>
+      <td>45</td>
+      <td>44</td>
+      <td>73</td>
+      <td>39</td>
+      <td>201</td>
+      <td>201</td>
+    </tr>
+    <tr>
+      <th>영어</th>
+      <td>76</td>
+      <td>92</td>
+      <td>45</td>
+      <td>69</td>
+      <td>282</td>
+      <td>282</td>
+    </tr>
+    <tr>
+      <th>국어</th>
+      <td>47</td>
+      <td>92</td>
+      <td>45</td>
+      <td>69</td>
+      <td>253</td>
+      <td>253</td>
+    </tr>
+    <tr>
+      <th>사회</th>
+      <td>92</td>
+      <td>81</td>
+      <td>85</td>
+      <td>40</td>
+      <td>298</td>
+      <td>298</td>
+    </tr>
+    <tr>
+      <th>과학</th>
+      <td>11</td>
+      <td>79</td>
+      <td>47</td>
+      <td>26</td>
+      <td>163</td>
+      <td>163</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+score = pd.read_csv("score.csv", index_col = "과목", encoding = "euc-kr")
+
+score
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>1반</th>
+      <th>2반</th>
+      <th>3반</th>
+      <th>4반</th>
+    </tr>
+    <tr>
+      <th>과목</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>수학</th>
+      <td>45</td>
+      <td>44</td>
+      <td>73</td>
+      <td>39</td>
+    </tr>
+    <tr>
+      <th>영어</th>
+      <td>76</td>
+      <td>92</td>
+      <td>45</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <th>국어</th>
+      <td>47</td>
+      <td>92</td>
+      <td>45</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <th>사회</th>
+      <td>92</td>
+      <td>81</td>
+      <td>85</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <th>과학</th>
+      <td>11</td>
+      <td>79</td>
+      <td>47</td>
+      <td>26</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+```python
+score2 = score.T
+score2.sum()
+```
+
+
+
+
+    과목
+    수학    201
+    영어    282
+    국어    253
+    사회    298
+    과학    163
+    dtype: int64
+
+
+
+
+```python
+f = score2.sum()
+```
+
+
+```python
+score['합계'] = f
+```
+
+
+```python
+score
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>1반</th>
+      <th>2반</th>
+      <th>3반</th>
+      <th>4반</th>
+      <th>합계</th>
+    </tr>
+    <tr>
+      <th>과목</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>수학</th>
+      <td>45</td>
+      <td>44</td>
+      <td>73</td>
+      <td>39</td>
+      <td>201</td>
+    </tr>
+    <tr>
+      <th>영어</th>
+      <td>76</td>
+      <td>92</td>
+      <td>45</td>
+      <td>69</td>
+      <td>282</td>
+    </tr>
+    <tr>
+      <th>국어</th>
+      <td>47</td>
+      <td>92</td>
+      <td>45</td>
+      <td>69</td>
+      <td>253</td>
+    </tr>
+    <tr>
+      <th>사회</th>
+      <td>92</td>
+      <td>81</td>
+      <td>85</td>
+      <td>40</td>
+      <td>298</td>
+    </tr>
+    <tr>
+      <th>과학</th>
+      <td>11</td>
+      <td>79</td>
+      <td>47</td>
+      <td>26</td>
+      <td>163</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
