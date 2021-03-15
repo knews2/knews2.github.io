@@ -8,18 +8,7 @@ main:
     url: /Java/
   - title: "카테고리"
     url: /categories/  
-
-  - title: "Python"
-    children:
-      - title: "Data handling"
-        url: /categories/#data-handling
-      - title: "Web-related"
-        url: /categories/#web
-      - title: "Pythonic"
-        url: /categories/#pythonic
-      - title: "etc."
-        url: /categories/#etc
-
+    
 serv: 
   - title: "Python"
     children:
