@@ -2,7 +2,7 @@
 main:
 #   - title: "Quick-Start Guide"
 #     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  - title: "Machine-Learning"
+  - title: "Python"
     children:
     - title: "Data Handling"
       url: /Basic/
@@ -14,3 +14,17 @@ main:
     url: /Java/
   - title: "All Posts"
     url: /categories/  
+
+serv: 
+  - title: "Python"
+    children:
+    - title: "Data Handling"
+      url: /Basic/
+    - title: "Machine-Learning"
+      url: /ML/
+  - title: "Kaggle"
+    url: /Kaggle/
+  - title: "Java"
+    url: /Java/
+  - title: "All Posts"
+    url: /categories/       
