@@ -277,10 +277,11 @@ defaults:
     values:
       layout: single
       author_profile: true
+      sidebar:
+        nav: "serv"      
       read_time: true
       comments: # true
       share: true
       related: true 
-      sidebar:
-        nav: "serv"
+
 
