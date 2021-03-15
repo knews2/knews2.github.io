@@ -2,30 +2,44 @@
 main:
 #   - title: "Quick-Start Guide"
 #     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  - title: "Python"
+  - title: "Machine-Learning"
     url: /ML/
-    children:
-    - title: "Data Handling"
-      url: /Basic/
-    - title: "Machine-Learning"
-      url: /ML/
-  - title: "Kaggle"
-    url: /Kaggle/
   - title: "Java"
     url: /Java/
-  - title: "All Posts"
+  - title: "카테고리"
     url: /categories/  
+
+  - title: "Python"
+    children:
+      - title: "Data handling"
+        url: /categories/#data-handling
+      - title: "Web-related"
+        url: /categories/#web
+      - title: "Pythonic"
+        url: /categories/#pythonic
+      - title: "etc."
+        url: /categories/#etc
 
 serv: 
   - title: "Python"
     children:
     - title: "Data Handling"
       url: /Basic/
+  - title: "Data Analytics"
+    children:
     - title: "Machine-Learning"
       url: /ML/
-  - title: "Kaggle"
-    url: /Kaggle/
+    - title: "etc."
+      url: //      
   - title: "Java"
-    url: /Java/
+    children:
+    - title: "Java"
+      url: /Java/
+  - title: "Project"
+    children:
+    - title: "Competition"
+      url: /Competition/    
+    - title: "Project"
+      url: /Project/        
   - title: "All Posts"
     url: /categories/       
