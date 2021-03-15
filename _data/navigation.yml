@@ -29,6 +29,8 @@ serv:
     - title: "Competition"
       url: /Competition/    
     - title: "Project"
-      url: /Project/        
+      url: /Project/    
+    - title: "Kaggle"
+      url: /Kaggle/        
   - title: "All Posts"
     url: /categories/       
