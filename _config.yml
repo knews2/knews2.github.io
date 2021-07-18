@@ -20,7 +20,7 @@ title                    : "Yuseon's Blog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Yuseon Kim"
-description              : "Will I become a Data Analyst? The answer is in this blog."
+description              : "Develop-ing"
 url                      : "https://knews2.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "knews2/knews2.github.io"
@@ -284,5 +284,16 @@ defaults:
       comments: # true
       share: true
       related: true 
+   # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+      read_time: false
+      comments: false
+      share: true
+      related: false   
 
 
