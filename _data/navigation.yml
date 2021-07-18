@@ -12,10 +12,10 @@ main:
 serv: 
   - title: "데이터 분석"
     children:
-  - title: "Python"
-      url: /Basic/  
-  - title: "Data-Project"
-      url: /ML/      
+    - title: "Python"
+        url: /Basic/  
+    - title: "Data-Project"
+        url: /ML/      
   - title: "Java"
     children:
     - title: "Java"
