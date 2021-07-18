@@ -2,7 +2,7 @@
 main:
 #   - title: "Quick-Start Guide"
 #     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  - title: "프로젝트"
+  - title: "데이터 분석"
     url: /ML/
   - title: "Java"
     url: /Java/
@@ -16,7 +16,7 @@ serv:
       url: /Basic/
   - title: "Data Analytics"
     children:
-    - title: "Machine-Learning"
+    - title: "데이터 분석"
       url: /ML/
     - title: "etc."
       url: //      
