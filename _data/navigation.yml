@@ -16,9 +16,9 @@ serv:
       url: /Basic/
     - title: "Data-Project"
       url: /ML/
-  - title: "Java"
+  - title: "코딩"
     children:
-    - title: "코딩"
+    - title: "Java"
       url: /Java/
   - title: "Project"
     children:
