@@ -10,19 +10,27 @@ main:
     url: /categories/  
     
 serv: 
-  - title: "데이터 분석"
+  - title: "Python"
     children:
-    - title: "Python"
-        url: /Basic/  
-    - title: "Data-Project"
-        url: /ML/      
+    - title: "Data Handling"
+      url: /Basic/
+  - title: "Data Analytics"
+    children:
+    - title: "데이터 분석"
+      url: /ML/
+    - title: "etc."
+      url: //      
   - title: "Java"
     children:
     - title: "Java"
       url: /Java/
   - title: "Project"
     children:
-    - title: "Toy Project"
-      url: /Project/          
+    - title: "Competition"
+      url: /Competition/    
+    - title: "Project"
+      url: /Project/    
+    - title: "Kaggle"
+      url: /Kaggle/        
   - title: "All Posts"
-    url: /categories/       
+    url: /categories/   
