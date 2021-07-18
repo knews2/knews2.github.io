@@ -10,16 +10,12 @@ main:
     url: /categories/  
     
 serv: 
+  - title: "데이터 분석"
+    children:
   - title: "Python"
-    children:
-    - title: "Data Handling"
-      url: /Basic/
-  - title: "Data Analytics"
-    children:
-    - title: "데이터 분석"
-      url: /ML/
-    - title: "etc."
-      url: //      
+      url: /Basic/  
+  - title: "Project"
+      url: /ML/      
   - title: "Java"
     children:
     - title: "Java"
