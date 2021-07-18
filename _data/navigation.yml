@@ -14,7 +14,7 @@ serv:
     children:
   - title: "Python"
       url: /Basic/  
-  - title: "Project"
+  - title: "Data-Project"
       url: /ML/      
   - title: "Java"
     children:
@@ -22,11 +22,7 @@ serv:
       url: /Java/
   - title: "Project"
     children:
-    - title: "Competition"
-      url: /Competition/    
-    - title: "Project"
-      url: /Project/    
-    - title: "Kaggle"
-      url: /Kaggle/        
+    - title: "Toy Project"
+      url: /Project/          
   - title: "All Posts"
     url: /categories/       
