@@ -4,7 +4,7 @@ main:
 #     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "데이터 분석"
     url: /ML/
-  - title: "Java"
+  - title: "코딩"
     url: /Java/
   - title: "카테고리"
     url: /categories/  
