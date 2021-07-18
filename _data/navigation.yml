@@ -16,8 +16,6 @@ serv:
       url: /Basic/
     - title: "데이터 분석"
       url: /ML/
-    - title: "etc."
-      url: //      
   - title: "Java"
     children:
     - title: "Java"
