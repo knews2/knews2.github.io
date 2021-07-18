@@ -2,7 +2,7 @@
 main:
 #   - title: "Quick-Start Guide"
 #     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  - title: "Machine-Learning"
+  - title: "프로젝트"
     url: /ML/
   - title: "Java"
     url: /Java/
